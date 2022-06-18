@@ -1,0 +1,63 @@
+.btn {
+    --size: 3px;
+    --size-neg: calc(-1 * var(--size));
+    --color: #fff;
+    --box-color: #000;
+    z-index: 1;
+    padding: 0.1em 0.2em;
+    cursor: pointer;
+    background: var(--color);
+    display: block;
+    border-color: transparent;
+    position: relative;
+    transition-duration: 0.4s;
+    transition-property: transform, box-shadow;
+    transition-timing-function: cubic-bezier(0.28, 0.82, 0.33, 1.16);
+    transform: translate(var(--size-neg), var(--size-neg));
+    box-shadow: var(--size) var(--size) var(--box-color);
+
+    &:hover,
+    &:focus {
+        --size: 5px;
+        text-decoration: none;
+    }
+
+    &:focus {
+        border-color: var(--box-color)
+    }
+
+    &:active,
+    &:disabled {
+        --size: 0px;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    // 3D Effect
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        background: var(--box-color);
+        transition: all .5s;
+        z-index: 0;
+    }
+
+    &::before {
+        transform: skewX(45deg);
+        width: 100%;
+        height: var(--size);
+        bottom: var(--size-neg);
+        left: calc(1/2 *var(--size));
+    }
+
+    &::after {
+        transform: skewY(45deg);
+        height: 100%;
+        width: var(--size);
+        right: var(--size-neg);
+        top: calc(1/2 *var(--size));
+    }
+}
