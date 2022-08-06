@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    overflow-x: hidden;
+}
+
+::selection {
+    background: theme(colors.dark-morado / 75%);
+    color: theme("colors.white")
+}
+
+@font-face {
+    font-family: Oxanium;
+    src: url("/fonts/Oxanium-B.ttf");
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url("/fonts/Ubuntu-M.ttf");
+}

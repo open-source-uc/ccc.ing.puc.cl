@@ -1,78 +1,84 @@
 ---
-// Component Imports
-import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/BlogHeader.astro';
-import BlogPostPreview from '../components/BlogPostPreview.astro';
-
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-let title = 'Example Blog';
-let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://example.com/';
-
-// Data Fetching: List all Markdown posts in the repo.
-
-let allPosts = await Astro.glob('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import BaseLayout from '~/layouts/Base.astro';
+import LandingCard from '~/components/LandingCard.astro';
+import EventCard from '~/components/EventCard.astro';
+import ArrowLink from "~/components/ArrowLink.astro";
+import LinkCard from "~/components/LinkCard.astro";
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-
-		<style>
-			header {
-				width: 100%;
-				height: 100%;
-				background-color: var(--theme-bg-offset);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.content {
-				margin-top: 4rem;
-				margin-bottom: 8rem;
-			}
-
-			.content :global(main > * + *) {
-				margin-top: 1rem;
-			}
-
-			.intro {
-				padding-bottom: 4rem;
-				margin-bottom: 2rem;
-				border-bottom: 4px solid var(--theme-divider);
-			}
-
-			.intro > * {
-				margin: 0;
-			}
-
-			.latest {
-				font-size: 2.5rem;
-				font-weight: 700;
-			}
-		</style>
-	</head>
-
-	<body>
-		<BlogHeader />
-		<div class="wrapper">
-			<main class="content">
-				<section class="intro">
-					<h1 class="latest">{title}</h1>
-					<p>{description}</p>
-				</section>
-				<section aria-label="Blog post list">
-					{allPosts.map((p) => <BlogPostPreview post={p} />)}
-				</section>
-			</main>
+<BaseLayout>
+	<!-- Imagen principal que cubre la pantalla horizontalmente -->
+	<div class="w-full bg-gray-300 shadow-inner">
+		<img class="mx-auto" src="/landing.svg" alt="">
+	</div>
+	<!-- 3 Targetas -->
+	<div class="flex flex-col md:flex-row gap-4 px-2 pb-4 items-center justify-center -mt-4">
+		<LandingCard title="Cursos DCC" class="bg-light-morado">
+			Listado de cursos del departamento, con sus respectivos links a Telegram
+		</LandingCard>
+		<LandingCard title="Representantes" class="bg-light-purpura">
+			Equipo del capitulo, delegados, y otros representantes junto a su información de contacto
+		</LandingCard>
+		<LandingCard title="Grupos e Iniciativas" class="bg-light-celeste w-">
+			Diferentes clubs, grupos e iniciativas relacionadas al departamento
+		</LandingCard>
+	</div>
+	<!-- Sobre el capítulo -->
+	<div class="bg-gray-100 flex flex-col justify-center items-center md:flex-row">
+		<div class="w-full h-40 max-h-40 md:w-max-fit md:w-[500px] md:h-[200px] md:max-h-[200px] md:p-4">
+			<img src="/imgs/capitulo.jpg" width="639" height="479" class=" object-cover w-full h-full md:rounded"
+				alt="Foto de las personas que organizaron el evento de programación competitiva">
 		</div>
-	</body>
-</html>
+		<div class="p-8 text-center max-w-md">
+			<h2 class="font-title text-xl mb-4">Sobre el capítulo</h2>
+			<p class="leading-tight">
+				Somos una organización dedicada a fomentar el desarrollo de la comunidad del
+				<abbr title="Departamento de Ciencia de la Computación de la Universidad Católica de Chile">DCC
+					UC</abbr>,
+				con la creación de diversos espacios y actividades.
+			</p>
+			<div class="mt-4 flex flex-col xs:flex-row items-center justify-center gap-6 flex-wrap gap-y-2">
+				<!-- Redes sociales -->
+				<div class="flex gap-2">
+					<img class="w-6 h-6" src="/icons/telegram.svg" alt="Telegram icon" />
+					<img class="w-6 h-6" src="/icons/linkedin.svg" alt="LinkedIn icon" />
+					<img class="w-6 h-6" src="/icons/facebook.svg" alt="Facebook icon" />
+					<img class="w-6 h-6" src="/icons/instagram.svg" alt="Instagram icon" />
+				</div>
+				<!-- Separador -->
+				<div class="w-0.5 bg-black h-4 rounded-full flex-shrink-0 hidden xs:block"></div>
+				<ArrowLink href="#" class="stroke-black">
+					más información
+				</ArrowLink>
+			</div>
+		</div>
+	</div>
+	<div class="py-8 px-4">
+		<h2 class="font-title text-xl text-center py-8">
+			Proximos Eventos
+		</h2>
+		<div class="flex md:flex-row flex-col items-center md:items-stretch justify-center gap-4">
+			<EventCard title="Programatón 👨‍💻" date={new Date("2022-08-12T15:20")} href="#">
+				Programaton para avanzar en diferentres tareas o proyectos de tus cursos.
+				Será en un lugar por definir.
+			</EventCard>
+			<EventCard title="DCCine 🍿" date={new Date("2022-08-17T18:00")} href="#">
+				Cine con cabritas en el Lusick, donde se verá la película The Social Network.
+			</EventCard>
+		</div>
+		<ArrowLink href="#" class="stroke-gray-700 text-gray-700 w-fit mx-auto mt-8 py-2">
+			ver dccalendario de eventos completo
+		</ArrowLink>
+	</div>
+	<div class="bg-gray-100 px-4 py-8">
+		<h2 class="font-title text-xl text-center py-8">
+			Otros links
+		</h2>
+		<div class="flex flex-wrap justify-center items-center gap-4">
+			<LinkCard href="#" img="" name="Merch" />
+			<LinkCard href="#" img="" name="Fotos" />
+			<LinkCard href="#" img="" name="Guias" />
+			<LinkCard href="#" img="" name="Recopilación Cursos" />
+		</div>
+	</div>
+</BaseLayout>

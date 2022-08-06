@@ -1,0 +1,29 @@
+---
+import Head, { Props as HeadProps } from "~/components/Head.astro";
+import Navbar from "~/components/Navbar.svelte";
+import Footer from "~/components/Footer.astro";
+import "~/styles/global.css";
+
+export type Props = HeadProps & {
+	lang?: string;
+}
+
+const { lang } = Astro.props as Props;
+---
+
+<html lang={lang || 'es' }>
+
+<head>
+
+	<Head {...Astro.props} />
+</head>
+
+<body>
+	<Navbar client:load />
+	<div>
+		<slot />
+	</div>
+	<Footer/>
+</body>
+
+</html>
