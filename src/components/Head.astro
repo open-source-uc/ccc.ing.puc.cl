@@ -1,12 +1,13 @@
 ---
-import SocialBanner from "$/social-banner.png";
-import SocialSquare from "$/social-square.png";
+import SocialBanner from "$/og/landscape.png?url";
+import SocialSquare from "$/og/square.png?url";
 
 export const meta = {
     title: "Capítulo de Ciencias de la Computación",
     description: "Página Web del Capítulo de Ciencias de la Computación de la Universidad Católica",
-    image: SocialBanner,
 };
+
+// TODO: ordenar esto
 
 export type Props = {
     title?: string;
@@ -15,8 +16,8 @@ export type Props = {
 }
 
 const { title = meta.title, description = meta.description, image } = Astro.props as Props;
-const bannerImage = image ?? SocialBanner
-const scuareImage = image ?? SocialSquare
+const bannerImage = SocialBanner
+const scuareImage = SocialSquare
 ---
 
 <!-- Global Metadata -->

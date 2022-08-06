@@ -6,6 +6,11 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   integrations: [tailwind(), svelte()],
   // TODO: cambiar a que sea variable de entorno
-  site: "benjavicente.github.io",
+  site: "https://benjavicente.github.io",
   base: "webccc",
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+  }
 });
