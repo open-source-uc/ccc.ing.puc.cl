@@ -20,7 +20,7 @@ const courses = yaml.load(coursesRaw) as Course[];
         Listado de cursos importantes para la carrera
     </div>
     <div class="bg-stone-200 shadow-inner">
-        <ul class="course-grid p-4 grid grip-tem max-w-4xl mx-auto shadow">
+        <ul class="course-grid p-4 grid grip-tem max-w-4xl mx-auto">
             {courses.map(({ codes, name, abbr, links }) => (
             <li class="bg-white rounded py-4 px-2">
                 <div>
