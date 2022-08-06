@@ -1,0 +1,221 @@
+- name: Matemáticas Discretas
+  codes:
+    - IIC1253
+  links:
+    telegram: https://t.me/joinchat/H0vd5xE-2PKI9HmjLvl6PQ
+- name: Visualización de Información
+  abbr: Infovis
+  codes:
+    - IC2026
+  links:
+    telegram: https://t.me/joinchat/LKlvHpQ7LkY4NzBh
+- name: Diseño Detallado de Software
+  abbr: DDS
+  codes:
+    - IIC2113
+  links:
+    telegram: https://t.me/joinchat/GeR-5BUmKQlmmH-Rus8tCA
+- name: Estructuras de Datos y Algoritmos
+  abbr: EDD
+  codes:
+    - IIC2133
+  links:
+    telegram: https://t.me/joinchat/25_MJQRMPgIxM2Yx
+- name: Ingeniería de Software
+  codes:
+    - IIC2143
+  links:
+    telegram: https://t.me/joinchat/Hmv11BWGcowgyQgQe17j4w
+- name: Proyecto de Especialidad
+  abbr: Capstone
+  codes:
+    - IIC2154
+  links:
+    telegram: https://t.me/joinchat/HFM3CUszyPvogelRRouckA
+- name: Arquitectura de Sistemas de Software
+  codes:
+    - IIC2173
+  links:
+    telegram: https://t.me/joinchat/GeR-5BX3vfvsGXdJKyl-cg
+- name: Lógica para Ciencias de la Computación
+  abbr: Lógica
+  codes:
+    - IIC2213
+  links:
+    telegram: https://t.me/joinchat/GjG-PRasCDP72Wj_3rL2TQ
+- name: Programación Avanzada
+  codes:
+    - IIC2233
+  links:
+    telegram: https://t.me/joinchat/QBKKDEsNN3_MPz8FaBzDrA
+- name: Teoría de Autómatas y Lenguajes Formales
+  abbr: Autómatas
+  codes:
+    - IIC2223
+  links:
+    telegram: https://t.me/joinchat/CogUgBTfxRlZRxWOwze7Sw
+- name: Grupo de Diseño y Análisis de Algoritmos
+  codes:
+    - IIC2283
+  links:
+    telegram: https://t.me/joinchat/GjG-PRbCNy2kUnfwbiRVgg
+- name: Sistemas operativos y redes
+  abbr: SSOO
+  codes:
+    - IIC2333
+  links:
+    telegram: https://t.me/joinchat/GjG-PRPFPZOVG2MNQus0-Q
+- name: Arquitectura de Computadores
+  codes:
+    - IIC2343
+  links:
+    telegram: https://t.me/joinchat/KOKrZhT8EVZK5CNmxWZfTg
+- name: Bases de Datos
+  codes:
+    - IIC2413
+  links:
+    telegram: https://t.me/joinchat/oqK1gH5mSjgwNDAx
+- name: Minería de Datos
+  codes:
+    - IIC2433
+  links:
+    telegram: https://t.me/joinchat/NYaaUVuoIgdmOTJh
+- name: Tecnologías y Aplicaciones Web
+  abbr: Web
+  codes:
+    - IIC2513
+  links:
+    telegram: https://t.me/+v3xQBvYb1v4xMmEx
+- name: Sistemas Distribuidos
+  codes:
+    - IIC2523
+  links:
+    telegram: https://t.me/joinchat/Hmv11BdJJI1_aPuoF_FSow
+- name: Taller de Programación Competitiva II
+  codes:
+    - IIC2553
+  links:
+    telegram: https://t.me/joinchat/BZnMkrwBkGdmOWM5
+- name: Inteligencia Artificial
+  abbr: IA
+  codes:
+    - IIC2613
+  links:
+    telegram: https://t.me/joinchat/GjG-PRPjOUuL35-amWV0GQ
+- name: Sistemas de Información
+  codes:
+    - IIC2713
+  links:
+    telegram: https://t.me/joinchat/CVrRARvuI1UbzI39mnMXGg
+- name: Fundamentos de Procesamiento de Imágenes
+  codes:
+    - IIC2714
+    - IEE2714
+  links:
+    telegram: https://t.me/joinchat/GeY84RuC3qRL0FWgp0Hd2g
+- name: Modelos de Procesos
+  codes:
+    - IIC2733
+  links:
+    telegram: https://t.me/IIC2733
+- name: Conocimiento, Cultura y Tecnología
+  abbr: CCT
+  codes:
+    - IIC2764
+  links:
+    telegram: https://t.me/joinchat/LApw1hqrFxxOMvdWUylCYA
+- name: Gestión de Proyectos de Tecnologías de Información
+  abbr: GPTI
+  codes:
+    - IIC3113
+  links:
+    telegram: https://t.me/joinchat/HFM3CU8X1aGKJoSp3rTxlA
+- name: Gestión de Proyectos de Tecnologías de Información
+  abbr: GPTI
+  codes:
+    - IIC3113
+  links:
+    telegram: https://t.me/joinchat/HFM3CU8X1aGKJoSp3rTxlA
+- name: Taller de Integración
+  codes:
+    - IIC3103
+  links:
+    telegram: https://t.me/+oeEhf8mMI7ljNmRh
+- name: Desarrollo de Software
+  codes:
+    - IIC3143
+  links:
+    telegram: https://t.me/joinchat/Mr57shhLwKBhnPRiFwNbqg
+- name: Criptografía y Seguridad Computacional
+  abbr: Cripto
+  codes:
+    - IIC3253
+  links:
+    telegram: https://t.me/joinchat/GjG-PRsRo9s53PTsTh6NOg
+- name: Implementación de Sistemas de Base de Datos
+  codes:
+    - IIC3413
+  links:
+    telegram: https://t.me/+uvQgYFTnhgk2Njcx
+- name: Tópicos Avanzados en Bases de Daos
+  codes:
+    - IIC3432
+  links:
+    telegram: https://t.me/joinchat/FG3F8Bhlt_X1b5CGDzWS_Q
+- name: Diseño Avanzado de Aplicaciones Web
+  codes:
+    - IIC3585
+  links:
+    telegram: https://t.me/joinchat/08E19b5gEYRiZmEx
+- name: Sistemas Recomendadores
+  abbr: RecSys
+  codes:
+    - IIC3633
+  links:
+    telegram: https://t.me/joinchat/HFM3CRUa1uhQWazhkjaXQw
+- name: Creación de videojuegos
+  codes:
+    - IIC3686
+  links:
+    telegram: https://t.me/joinchat/I0y-GhonQvb41eXAc286lg
+- name: Topicos Avanzados en Inteligencia Artificial
+  codes:
+    - IIC3692
+  links:
+    telegram: https://t.me/joinchat/Wo9FiXq8M51jMjhh
+- name: "[Deep Learning - DL] Aprendizaje Profundo"
+  codes:
+    - IIC3697
+  links:
+    telegram: https://t.me/joinchat/ILQXqhO8Q0rkkxCk_yngsw
+- name: Gestión de Operaciones TI
+  codes:
+    - IIC3703
+  links:
+    telegram: https://t.me/joinchat/yNwJ3a6jxQpmNTZh
+- name: Reconocimiento de Patrones
+  codes:
+    - IIC3724
+    - IEE3724
+  links:
+    telegram: https://t.me/joinchat/CLF1HRhLmmYM0lH5sN6pQQ
+- name: Estrategias y Tecnologías de la Información
+  codes:
+    - IIC3743
+  links:
+    telegram: https://t.me/joinchat/4JBXuX49XYBhM2Yx
+- name: Testing
+  codes:
+    - IC3745
+  links:
+    telegram: https://t.me/joinchat/Mr57shbDR_Tw-lEDFeiX5Q
+- name: Tecnologías para Inteligencia de Negocios
+  codes:
+    - IIC3752
+  links:
+    telegram: https://t.me/joinchat/QLZh2xJc3Bo4NzVh
+- name: Inferencia Estadística
+  codes:
+    - EYP2114
+  links:
+    telegram: https://t.me/joinchat/3hRaHQ_gbHs4OWRh

@@ -7,12 +7,12 @@
 <nav class:open={$isNavBarOpen}>
   <!-- Parte superior / de la izquierda del navbar -->
   <div class="flex gap-8 items-center justify-between w-full md:w-auto">
-    <div class="flex items-center gap-4">
+    <a class="flex items-center gap-4" href="/">
       <img src={cccIcon} height="50px" width="46px" alt="CCC logo" />
       <h1 class="hidden lg:block font-title font-extrabold text-xl max-w-[10em] leading-none">
-        Capítulo de Ciencias de la Computación
+        Capítulo de Ciencia de la Computación
       </h1>
-    </div>
+    </a>
     <Hambuerger class="md:hidden flex" on:click={() => isNavBarOpen.set(!$isNavBarOpen)} isOpen={$isNavBarOpen} />
   </div>
   <!-- Separador -->

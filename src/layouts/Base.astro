@@ -2,28 +2,31 @@
 import Head, { Props as HeadProps } from "~/components/Head.astro";
 import Navbar from "~/components/Navbar.svelte";
 import Footer from "~/components/Footer.astro";
+import { classNames } from "~/lib/utils";
 import "~/styles/global.css";
 
 export type Props = HeadProps & {
 	lang?: string;
+	class?: string
 }
 
-const { lang } = Astro.props as Props;
+const { lang, class: klass, ...headProps } = Astro.props as Props;
 ---
 
 <html lang={lang || 'es' }>
 
 <head>
 
-	<Head {...Astro.props} />
+	<Head {...headProps} />
 </head>
 
-<body>
+<body class="flex flex-col min-h-[100vh] min-h-[100svh] h-fit">
+	<div class="absolute w-screen z-50 bg-red-700 text-white font-bold text-center">En desarrollo!</div>
 	<Navbar client:load />
-	<div>
+	<div class={classNames("flex-1", klass)}>
 		<slot />
 	</div>
-	<Footer/>
+	<Footer />
 </body>
 
 </html>

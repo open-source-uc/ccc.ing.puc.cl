@@ -19,13 +19,13 @@ import instagramIcon from "$/icons/instagram.svg"
 	</div>
 	<!-- 3 Targetas -->
 	<div class="flex flex-col md:flex-row gap-4 px-2 pb-4 items-center justify-center -mt-4">
-		<LandingCard title="Cursos DCC" class="bg-light-morado">
+		<LandingCard title="Cursos DCC" class="bg-light-morado" href="/cursos">
 			Listado de cursos del departamento, con sus respectivos links a Telegram
 		</LandingCard>
-		<LandingCard title="Representantes" class="bg-light-purpura">
+		<LandingCard title="Representantes" class="bg-light-purpura" href="/representantes">
 			Equipo del capitulo, delegados, y otros representantes junto a su información de contacto
 		</LandingCard>
-		<LandingCard title="Grupos e Iniciativas" class="bg-light-celeste w-">
+		<LandingCard title="Grupos e Iniciativas" class="bg-light-celeste" href="/grupos">
 			Diferentes clubs, grupos e iniciativas relacionadas al departamento
 		</LandingCard>
 	</div>
@@ -61,7 +61,7 @@ import instagramIcon from "$/icons/instagram.svg"
 	</div>
 	<div class="py-8 px-4">
 		<h2 class="font-title text-xl text-center py-8">
-			Proximos Eventos
+			Proximos Eventos <br />(relleno, no son reales!)
 		</h2>
 		<div class="flex md:flex-row flex-col items-center md:items-stretch justify-center gap-4">
 			<EventCard title="Programatón 👨‍💻" date={new Date("2022-08-12T15:20")} href="#">
@@ -72,7 +72,7 @@ import instagramIcon from "$/icons/instagram.svg"
 				Cine con cabritas en el Lusick, donde se verá la película The Social Network.
 			</EventCard>
 		</div>
-		<ArrowLink href="#" class="stroke-gray-700 text-gray-700 w-fit mx-auto mt-8 py-2">
+		<ArrowLink href="/eventos" class="stroke-gray-700 text-gray-700 w-fit mx-auto mt-8 py-2">
 			ver dccalendario de eventos completo
 		</ArrowLink>
 	</div>
@@ -81,10 +81,11 @@ import instagramIcon from "$/icons/instagram.svg"
 			Otros links
 		</h2>
 		<div class="flex flex-wrap justify-center items-center gap-4">
-			<LinkCard href="#" img="" name="Merch" />
-			<LinkCard href="#" img="" name="Fotos" />
-			<LinkCard href="#" img="" name="Guias" />
+			<LinkCard href="/merch" img="" name="Merch" />
+			<LinkCard href="/fotos" img="" name="Fotos" />
+			<LinkCard href="/guias" img="" name="Guias" />
 			<LinkCard href="#" img="" name="Recopilación Cursos" />
+			<LinkCard href="/jams" img="" name="Jams Realizadas" />
 		</div>
 	</div>
 </BaseLayout>
