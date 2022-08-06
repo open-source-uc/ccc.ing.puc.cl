@@ -4,12 +4,18 @@ import LandingCard from '~/components/LandingCard.astro';
 import EventCard from '~/components/EventCard.astro';
 import ArrowLink from "~/components/ArrowLink.astro";
 import LinkCard from "~/components/LinkCard.astro";
+import landingImg from "$/landing.svg"
+import capImg from "$/imgs/capitulo.jpg"
+import telegramIcon from "$/icons/telegram.svg"
+import linkedinIcon from "$/icons/linkedin.svg"
+import facebookIcon from "$/icons/facebook.svg"
+import instagramIcon from "$/icons/instagram.svg"
 ---
 
 <BaseLayout>
 	<!-- Imagen principal que cubre la pantalla horizontalmente -->
-	<div class="w-full bg-gray-300 shadow-inner">
-		<img class="mx-auto" src="/landing.svg" alt="">
+	<div class="w-full bg-gray-300 shadow-inner min-h-100px">
+		<img class="mx-auto" src={landingImg} aria-hidden>
 	</div>
 	<!-- 3 Targetas -->
 	<div class="flex flex-col md:flex-row gap-4 px-2 pb-4 items-center justify-center -mt-4">
@@ -26,7 +32,7 @@ import LinkCard from "~/components/LinkCard.astro";
 	<!-- Sobre el capítulo -->
 	<div class="bg-gray-100 flex flex-col justify-center items-center md:flex-row">
 		<div class="w-full h-40 max-h-40 md:w-max-fit md:w-[500px] md:h-[200px] md:max-h-[200px] md:p-4">
-			<img src="/imgs/capitulo.jpg" width="639" height="479" class=" object-cover w-full h-full md:rounded"
+			<img src={capImg} class=" object-cover w-full h-full md:rounded"
 				alt="Foto de las personas que organizaron el evento de programación competitiva">
 		</div>
 		<div class="p-8 text-center max-w-md">
@@ -40,10 +46,10 @@ import LinkCard from "~/components/LinkCard.astro";
 			<div class="mt-4 flex flex-col xs:flex-row items-center justify-center gap-6 flex-wrap gap-y-2">
 				<!-- Redes sociales -->
 				<div class="flex gap-2">
-					<img class="w-6 h-6" src="/icons/telegram.svg" alt="Telegram icon" />
-					<img class="w-6 h-6" src="/icons/linkedin.svg" alt="LinkedIn icon" />
-					<img class="w-6 h-6" src="/icons/facebook.svg" alt="Facebook icon" />
-					<img class="w-6 h-6" src="/icons/instagram.svg" alt="Instagram icon" />
+					<img class="w-6 h-6" src={telegramIcon} alt="Telegram icon" />
+					<img class="w-6 h-6" src={linkedinIcon} alt="LinkedIn icon" />
+					<img class="w-6 h-6" src={facebookIcon} alt="Facebook icon" />
+					<img class="w-6 h-6" src={instagramIcon} alt="Instagram icon" />
 				</div>
 				<!-- Separador -->
 				<div class="w-0.5 bg-black h-4 rounded-full flex-shrink-0 hidden xs:block"></div>

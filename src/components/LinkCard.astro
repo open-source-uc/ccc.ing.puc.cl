@@ -1,6 +1,7 @@
 ---
 import ArrowLink from "~/components/ArrowLink.astro";
 import { classNames } from "~/lib/utils";
+import capImg from "$/imgs/capitulo.jpg";
 
 export interface Props {
     class?: string;
@@ -14,7 +15,7 @@ const { name, img, href = "#", ...props } = Astro.props as Props;
 
 <a class={classNames("card max-w-[180px] min-h-[210px] hover:shadow-xl hover:underline", props.class)} {href}>
     <div>
-        <img class="h-24 w-24 object-cover rounded" src="/imgs/capitulo.jpg" alt={`Foto de ${name}`}>
+        <img class="h-24 w-24 object-cover rounded" src={capImg} alt={`Foto de ${name}`}>
     </div>
     <div class="flex-1 flex justify-center items-center text-center w-min">
         {name}
