@@ -1,13 +1,15 @@
 <script lang="ts">
   interface $$Props {
-    isOpen: boolean;
     class?: string;
+    label: string;
+    isOpen?: boolean;
   }
 
+  export let label: string;
   export let isOpen = false;
 </script>
 
-<button on:click class={$$props.class} class:open={isOpen}>
+<button aria-label={label} type="button" on:click class={$$props.class} class:open={isOpen}>
   <div class="up" />
   <div class="center" />
   <div class="down" />

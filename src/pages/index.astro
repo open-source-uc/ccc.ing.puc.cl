@@ -5,7 +5,8 @@ import EventCard from '~/components/EventCard.astro';
 import ArrowLink from "~/components/ArrowLink.astro";
 import LinkCard from "~/components/LinkCard.astro";
 import landingImg from "$/landing.svg"
-import capImg from "$/imgs/capitulo.jpg"
+import capImg from "$/imgs/capitulo.webp"
+import merchImg from "$/imgs/merch.webp"
 import telegramIcon from "$/icons/telegram.svg"
 import linkedinIcon from "$/icons/linkedin.svg"
 import facebookIcon from "$/icons/facebook.svg"
@@ -15,7 +16,7 @@ import instagramIcon from "$/icons/instagram.svg"
 <BaseLayout>
 	<!-- Imagen principal que cubre la pantalla horizontalmente -->
 	<div class="w-full bg-gray-300 shadow-inner min-h-100px">
-		<img class="mx-auto" src={landingImg} aria-hidden>
+		<img class="mx-auto" src={landingImg} width="356" height="192" alt="Imagén del logo del capítulo junto a su mascota, dccín">
 	</div>
 	<!-- 3 Targetas -->
 	<div class="flex flex-col md:flex-row gap-4 px-2 pb-4 items-center justify-center -mt-4">
@@ -43,26 +44,26 @@ import instagramIcon from "$/icons/instagram.svg"
 					UC</abbr>,
 				con la creación de diversos espacios y actividades.
 			</p>
-			<div class="mt-4 flex flex-col xs:flex-row items-center justify-center gap-6 flex-wrap gap-y-2">
+			<div class="mt-4 flex flex-col xs:flex-row items-center justify-center gap-4">
 				<!-- Redes sociales -->
-				<div class="flex gap-2">
-					<a href="https://t.me/joinchat/EjPdwkIoyQB3037UcnTyhA">
-						<img class="w-6 h-6" src={telegramIcon} alt="Telegram icon" />
+				<div class="flex gap-1">
+					<a href="https://t.me/joinchat/EjPdwkIoyQB3037UcnTyhA" class="p-1">
+						<img class="w-6 h-6" src={telegramIcon} alt="Telegr am icon" />
 					</a>
-					<a href="https://www.linkedin.com/company/dcc-ccc/">
+					<a href="https://www.linkedin.com/company/dcc-ccc/" class="p-1">
 						<img class="w-6 h-6" src={linkedinIcon} alt="LinkedIn icon" />
 					</a>
-					<a href="https://www.facebook.com/acm.puc/">
+					<a href="https://www.facebook.com/acm.puc/" class="p-1">
 						<img class="w-6 h-6" src={facebookIcon} alt="Facebook icon" />
 					</a>
-					<a href="https://www.instagram.com/ccc.ing.uc">
+					<a href="https://www.instagram.com/ccc.ing.uc" class="p-1">
 						<img class="w-6 h-6" src={instagramIcon} alt="Instagram icon" />
 					</a>
 				</div>
 				<!-- Separador -->
 				<div class="w-0.5 bg-black h-4 rounded-full flex-shrink-0 hidden xs:block"></div>
 				<ArrowLink href="/representantes#capitulo" class="stroke-black">
-					más información
+					más sobre el capítulo
 				</ArrowLink>
 			</div>
 		</div>
@@ -89,11 +90,11 @@ import instagramIcon from "$/icons/instagram.svg"
 			Otros links
 		</h2>
 		<div class="flex flex-wrap justify-center items-center gap-4">
-			<LinkCard href="/merch" img="" name="Merch" />
-			<LinkCard href="/fotos" img="" name="Fotos" />
-			<LinkCard href="/guias" img="" name="Guias" />
-			<LinkCard href="#" img="" name="Recopilación Cursos" />
-			<LinkCard href="/jams" img="" name="Jams Realizadas" />
+			<LinkCard href="/merch" img={merchImg} name="Merch" />
+			<LinkCard href="/fotos" img={merchImg} name="Fotos" />
+			<LinkCard href="/guias" img={merchImg} name="Guias" />
+			<LinkCard href="#" img={merchImg} name="Recopilación Cursos" />
+			<LinkCard href="/jams" img={merchImg} name="Jams Realizadas" />
 		</div>
 	</div>
 </BaseLayout>

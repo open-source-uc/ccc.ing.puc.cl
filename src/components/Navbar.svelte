@@ -6,19 +6,24 @@
 
 <nav class:open={$isNavBarOpen}>
   <!-- Parte superior / de la izquierda del navbar -->
-  <div class="flex gap-8 items-center justify-between w-full md:w-auto">
+  <div class="flex w-full items-center justify-between gap-8 md:w-auto">
     <a class="flex items-center gap-4" href="/">
       <img src={cccIcon} height="50px" width="46px" alt="CCC logo" />
-      <h1 class="hidden lg:block font-title font-extrabold text-xl max-w-[10em] leading-none">
+      <h1 class="hidden max-w-[10em] font-title text-xl font-extrabold leading-none lg:block">
         Capítulo de Ciencia de la Computación
       </h1>
     </a>
-    <Hambuerger class="md:hidden flex" on:click={() => isNavBarOpen.set(!$isNavBarOpen)} isOpen={$isNavBarOpen} />
+    <Hambuerger
+      label="open navbar"
+      class="flex md:hidden"
+      on:click={() => isNavBarOpen.set(!$isNavBarOpen)}
+      isOpen={$isNavBarOpen}
+    />
   </div>
   <!-- Separador -->
-  <div class="w-1 bg-black h-6 rounded-full hidden md:block" />
+  <div class="hidden h-6 w-1 rounded-full bg-black md:block" />
   <!-- Parte inferior / de la derecha del navbar -->
-  <div id="nav-content" class="hidden items-center gap-2 md:gap-8 md:flex w-full md:w-auto flex-col md:flex-row">
+  <div id="nav-content" class="hidden w-full flex-col items-center gap-2 md:flex md:w-auto md:flex-row md:gap-8">
     <a class="nav-item" href="/cursos">Cursos</a>
     <a class="nav-item" href="/representantes">Representantes</a>
     <a class="nav-item" href="/grupos">Grupos</a>
@@ -30,10 +35,10 @@
 
 <style>
   nav {
-    @apply flex gap-8 items-center justify-between md:justify-center shadow-md p-4 flex-wrap md:flex-nowrap sticky w-full bg-white top-0;
+    @apply sticky top-0 flex w-full flex-wrap items-center justify-between gap-8 bg-white p-4 shadow-md md:flex-nowrap md:justify-center;
   }
   .nav-item {
-    @apply px-1 py-2 text-gray-600 hover:underline decoration-purple-800 text-center;
+    @apply px-1 py-2 text-center font-bold text-gray-600 decoration-purple-800 hover:underline;
   }
   nav.open #nav-content {
     @apply flex items-stretch;

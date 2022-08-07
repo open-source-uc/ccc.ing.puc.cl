@@ -14,7 +14,7 @@ const defaultCallToAction = "ir al listado";
 const { title, callToAction = defaultCallToAction, href = "#", ...props } = Astro.props as Props;
 ---
 
-<div class={classNames("card max-w-md md:max-w-xs", props.class )}>
+<div class={classNames("card max-w-md md:max-w-xs font-bold", props.class )}>
     <div>
         <div class="font-title text-xl">{title}</div>
         <div>

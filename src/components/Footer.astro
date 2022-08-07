@@ -3,19 +3,19 @@ import CCCLogo from "~/components/svgs/ccc.astro";
 ---
 
 <footer class="bg-black flex flex-col md:flex-row justify-between items-center px-2 md:px-8 py-6 gap-4">
-    <div class="text-center md:text-left text-stone-600">
-        <div>
+    <div class="text-center md:text-left text-stone-400">
+        <div class="font-bold">
             Contacto:
-            <a class="hover:text-stone-400 transition-all" href="mailto:helloworld@ing.puc.cl">helloworld@ing.puc.cl</a>
-        </div>
-        <a class="hover:text-stone-400 block transition-all" href="https://github.com/open-source-uc/web-ccc/">
+            <a class="hover:text-stone-200 transition-all" href="mailto:helloworld@ing.puc.cl">helloworld@ing.puc.cl</a>
+        </div >
+        <a class="hover:text-stone-200 block transition-all font-bold" href="https://github.com/open-source-uc/web-ccc/">
             Código disponible en GitHub
         </a>
-        <div>
+        <div  class="font-bold text-sm" >
             ©2022 Capítulo de Ciencia de la Computación UC
         </div>
     </div>
-    <a href="#top">
-        <CCCLogo class="fill-stone-600" />
+    <a href="#top" title="go to top" class="block">
+        <CCCLogo class="fill-stone-400 hover:fill-stone-200 transition-colors" />
     </a>
 </footer>
