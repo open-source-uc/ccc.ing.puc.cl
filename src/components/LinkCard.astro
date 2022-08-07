@@ -14,7 +14,7 @@ const { name, img, href = "#", ...props } = Astro.props as Props;
 
 <a class={classNames("card max-w-[180px] min-h-[210px] hover:shadow-xl hover:underline", props.class)} {href}>
     <div>
-        <img class="h-24 w-24 object-cover rounded" src={img} alt={`Foto de ${name}`}>
+        <img class="h-24 w-24 object-cover rounded" src={img} alt={`Foto de ${name}`} width="100" height="100">
     </div>
     <div class="flex-1 flex justify-center items-center text-center w-min">
         {name}
