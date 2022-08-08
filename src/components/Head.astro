@@ -8,17 +8,19 @@ export const meta = {
     description: "Página Web del Capítulo de Ciencia de la Computación de la Universidad Católica",
 };
 
-// TODO: ordenar esto
-
 export type Props = {
     title?: string;
     description?: string;
-    image?: string;
+    bannerImage?: string;
+    scuareImage?: string;
 }
 
-const { title = meta.title, description = meta.description, image } = Astro.props as Props;
-const bannerImage = SocialBanner
-const scuareImage = SocialSquare
+const {
+    title = meta.title,
+    description = meta.description,
+    bannerImage = SocialBanner,
+    scuareImage = SocialSquare
+} = Astro.props as Props;
 ---
 
 <!-- Preload Fonts -->

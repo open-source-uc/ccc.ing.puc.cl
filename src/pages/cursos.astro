@@ -2,7 +2,7 @@
 import coursesRaw from "/data/courses.yml?raw";
 import * as yaml from "js-yaml";
 import BaseLayout from "~/layouts/Base.astro"
-
+import bannerImage from "$/og/specific/cursos.png"
 
 type Course = {
     codes: string[];
@@ -14,7 +14,7 @@ type Course = {
 const courses = yaml.load(coursesRaw) as Course[];
 ---
 
-<BaseLayout>
+<BaseLayout {bannerImage}>
     <div class="px-4 py-8">
         <h2 class="font-title text-xl">Cursos</h2>
         Listado de cursos importantes para la carrera
