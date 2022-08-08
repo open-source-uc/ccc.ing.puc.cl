@@ -130,12 +130,6 @@
     - IIC3113
   links:
     telegram: https://t.me/joinchat/HFM3CU8X1aGKJoSp3rTxlA
-- name: Gestión de Proyectos de Tecnologías de Información
-  abbr: GPTI
-  codes:
-    - IIC3113
-  links:
-    telegram: https://t.me/joinchat/HFM3CU8X1aGKJoSp3rTxlA
 - name: Taller de Integración
   codes:
     - IIC3103
@@ -213,7 +207,7 @@
   codes:
     - IIC3752
   links:
-    telegram: https://t.me/joinchat/QLZh2xJc3Bo4NzVh
+    telegram: https://t.me/+btdo3XK6y-MzNTUx
 - name: Inferencia Estadística
   codes:
     - EYP2114
