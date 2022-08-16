@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# TODO: mejor argumento para cambiar el nombre del archivo
+
+magick $1 \
+    -quality 86 \
+    -resize $2^ \
+    -gravity center \
+    -crop $2+0+0 \
+    -compress LZW \
+    -define webp:lossless=true \
+    $3
