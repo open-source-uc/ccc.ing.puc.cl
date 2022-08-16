@@ -1,22 +1,28 @@
 ---
-import BaseLayout from '~/layouts/Base.astro';
-import LandingCard from '~/components/LandingCard.astro';
-import EventCard from '~/components/EventCard.astro';
-import ArrowLink from "~/components/ArrowLink.astro";
+import BaseLayout from "~/layouts/Base.astro";
+import LandingCard from "~/components/LandingCard.astro";
+import ArrowLink from "~/components/ArrowLink.svelte";
 import LinkCard from "~/components/LinkCard.astro";
-import landingImg from "$/landing.svg"
-import capImg from "$/imgs/capitulo.webp"
-import merchImg from "$/imgs/merch.webp"
-import telegramIcon from "$/icons/telegram.svg"
-import linkedinIcon from "$/icons/linkedin.svg"
-import facebookIcon from "$/icons/facebook.svg"
-import instagramIcon from "$/icons/instagram.svg"
+import LandingEvents from "~/components/LandingEvents.svelte";
+import landingImg from "$/landing.svg";
+import capImg from "$/imgs/capitulo.webp";
+import merchImg from "$/imgs/merch.webp";
+import telegramIcon from "$/icons/telegram.svg";
+import linkedinIcon from "$/icons/linkedin.svg";
+import facebookIcon from "$/icons/facebook.svg";
+import instagramIcon from "$/icons/instagram.svg";
 ---
 
 <BaseLayout>
 	<!-- Imagen principal que cubre la pantalla horizontalmente -->
 	<div class="w-full bg-gray-300 shadow-inner min-h-100px">
-		<img class="mx-auto" src={landingImg} width="356" height="192" alt="Imagén del logo del capítulo junto a su mascota, dccín">
+		<img
+			class="mx-auto"
+			src={landingImg}
+			width="356"
+			height="192"
+			alt="Imagén del logo del capítulo junto a su mascota, dccín"
+		/>
 	</div>
 	<!-- 3 Targetas -->
 	<div class="flex flex-col md:flex-row gap-4 px-2 pb-4 items-center justify-center -mt-4">
@@ -33,17 +39,20 @@ import instagramIcon from "$/icons/instagram.svg"
 	<!-- Sobre el capítulo -->
 	<div class="bg-gray-100 flex flex-col justify-center items-center md:flex-row">
 		<div class="w-full h-40 max-h-40 md:w-max-fit md:w-[500px] md:h-[200px] md:max-h-[200px] md:p-4">
-			<img src={capImg} class=" object-cover w-full h-full md:rounded"
-				width="750" height="562"
-				alt="Foto de las personas que organizaron el evento de programación competitiva">
+			<img
+				src={capImg}
+				class="object-cover w-full h-full md:rounded"
+				width="750"
+				height="562"
+				alt="Foto de las personas que organizaron el evento de programación competitiva"
+			/>
 		</div>
 		<div class="p-8 text-center max-w-md">
 			<h2 class="font-title text-xl mb-4">Sobre el capítulo</h2>
 			<p class="leading-tight">
 				Somos una organización dedicada a fomentar el desarrollo de la comunidad del
-				<abbr title="Departamento de Ciencia de la Computación de la Universidad Católica de Chile">DCC
-					UC</abbr>,
-				con la creación de diversos espacios y actividades.
+				<abbr title="Departamento de Ciencia de la Computación de la Universidad Católica de Chile">DCC UC</abbr>, con
+				la creación de diversos espacios y actividades.
 			</p>
 			<div class="mt-4 flex flex-col xs:flex-row items-center justify-center gap-4">
 				<!-- Redes sociales -->
@@ -63,33 +72,20 @@ import instagramIcon from "$/icons/instagram.svg"
 				</div>
 				<!-- Separador -->
 				<div class="w-0.5 bg-black h-4 rounded-full flex-shrink-0 hidden xs:block"></div>
-				<ArrowLink href="/representantes#capitulo" class="stroke-black">
-					más sobre el capítulo
-				</ArrowLink>
+				<ArrowLink action="más sobre el capítulo" href="/representantes#capitulo" class="stroke-black" />
 			</div>
 		</div>
 	</div>
 	<div class="py-8 px-4">
-		<h2 class="font-title text-xl text-center py-8">
-			Proximos Eventos <br />(relleno, no son reales!)
-		</h2>
-		<div class="flex md:flex-row flex-col items-center md:items-stretch justify-center gap-4">
-			<EventCard title="Programatón 👨‍💻" date={new Date("2022-08-12T15:20")} href="#">
-				Programaton para avanzar en diferentres tareas o proyectos de tus cursos.
-				Será en un lugar por definir.
-			</EventCard>
-			<EventCard title="DCCine 🍿" date={new Date("2022-08-17T18:00")} href="#">
-				Cine con cabritas en el Lusick, donde se verá la película The Social Network.
-			</EventCard>
-		</div>
-		<ArrowLink href="/eventos" class="stroke-gray-700 text-gray-700 w-fit mx-auto mt-8 py-2">
-			ver dccalendario de eventos completo
-		</ArrowLink>
+		<LandingEvents googleCalendarId="c_7h2ffgd26g1s9au82k5lovermg@group.calendar.google.com" client:load />
+		<ArrowLink
+			action="ver dccalendario de eventos completo"
+			href="/eventos"
+			class="stroke-gray-700 text-gray-700 w-fit mx-auto mt-8 py-2"
+		/>
 	</div>
 	<div class="bg-gray-100 px-4 py-8">
-		<h2 class="font-title text-xl text-center py-8">
-			Otros links
-		</h2>
+		<h2 class="font-title text-xl text-center py-8">Otros links</h2>
 		<div class="flex flex-wrap justify-center items-center gap-4">
 			<LinkCard href="/merch" img={merchImg} name="Merch" />
 			<LinkCard href="/fotos" img={merchImg} name="Fotos" />

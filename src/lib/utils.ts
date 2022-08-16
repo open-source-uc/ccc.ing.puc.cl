@@ -1,4 +1,6 @@
-export const classNames = (...classes: string[]) => classes.filter(Boolean).join(" ");
+type ClassValue = string | undefined | null | false;
+
+export const classNames = (...classes: ClassValue[]) => classes.filter(Boolean).join(" ");
 
 const dateTimeFormatter = new Intl.DateTimeFormat("es-CL", {
   weekday: "long",

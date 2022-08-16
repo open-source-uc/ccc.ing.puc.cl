@@ -1,12 +1,12 @@
 ---
-import ArrowLink from "~/components/ArrowLink.astro";
+import ArrowLink from "~/components/ArrowLink.svelte";
 import { classNames } from "~/lib/utils";
 
 export interface Props {
-    class: string;
-    title: string;
-    callToAction?: string;
-    href: string;
+	class: string;
+	title: string;
+	callToAction?: string;
+	href: string;
 }
 
 const defaultCallToAction = "ir al listado";
@@ -14,20 +14,18 @@ const defaultCallToAction = "ir al listado";
 const { title, callToAction = defaultCallToAction, href = "#", ...props } = Astro.props as Props;
 ---
 
-<div class={classNames("card max-w-md md:max-w-xs font-bold", props.class )}>
-    <div>
-        <div class="font-title text-xl">{title}</div>
-        <div>
-            <slot />
-        </div>
-    </div>
-    <ArrowLink {href} class="justify-end pt-4">
-        {callToAction}
-    </ArrowLink>
+<div class={classNames("card max-w-md md:max-w-xs font-bold", props.class)}>
+	<div>
+		<div class="font-title text-xl">{title}</div>
+		<div>
+			<slot />
+		</div>
+	</div>
+	<ArrowLink {href} action={callToAction} class="justify-end pt-4" />
 </div>
 
 <style>
-    .card {
-        @apply text-white stroke-white py-4 px-3 rounded flex flex-col justify-between leading-tight shadow;
-    }
+	.card {
+		@apply flex flex-col justify-between rounded stroke-white py-4 px-3 leading-tight text-white shadow;
+	}
 </style>
