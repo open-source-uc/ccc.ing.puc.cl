@@ -11,6 +11,7 @@ import telegramIcon from "$/icons/telegram.svg";
 import linkedinIcon from "$/icons/linkedin.svg";
 import facebookIcon from "$/icons/facebook.svg";
 import instagramIcon from "$/icons/instagram.svg";
+import { googleCalendarId, googleAPIKey } from "~/lib/calendar";
 ---
 
 <BaseLayout>
@@ -77,7 +78,7 @@ import instagramIcon from "$/icons/instagram.svg";
 		</div>
 	</div>
 	<div class="py-8 px-4">
-		<LandingEvents googleCalendarId="c_7h2ffgd26g1s9au82k5lovermg@group.calendar.google.com" client:load />
+		<LandingEvents {googleCalendarId} {googleAPIKey} client:idle />
 		<ArrowLink
 			action="ver dccalendario de eventos completo"
 			href="/eventos"
