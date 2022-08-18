@@ -15,8 +15,8 @@
 		const response = await fetch(url);
 		const data = (await response.json()) as GoogleCalendarResponse;
 		data.items.sort((a, b) => {
-			const aDate = new Date(a.start.date);
-			const bDate = new Date(b.start.date);
+			const aDate = new Date(a.start.dateTime || a.start.date);
+			const bDate = new Date(b.start.dateTime || b.start.date);
 			return aDate.getTime() - bDate.getTime();
 		});
 		calendarData.set(data);
