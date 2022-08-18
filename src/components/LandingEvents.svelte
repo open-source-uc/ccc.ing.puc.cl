@@ -4,14 +4,14 @@
 	import { formatDateTime } from "~/lib/utils";
 	import ArrowLink from "~/components/ArrowLink.svelte";
 
-	export let calendarId: string;
+	export let googleCalendarId: string;
 	export let googleAPIKey: string;
 
 	const calendarData = atom<GoogleCalendarResponse | null>(null);
 
 	onMount(async () => {
 		const now = new Date().toISOString();
-		const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?timeMin=${now}&key=${googleAPIKey}`;
+		const url = `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events?timeMin=${now}&key=${googleAPIKey}`;
 		const response = await fetch(url);
 		const data = (await response.json()) as GoogleCalendarResponse;
 		data.items.sort((a, b) => {

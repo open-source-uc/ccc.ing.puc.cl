@@ -78,7 +78,7 @@ import { googleCalendarId, googleAPIKey } from "~/lib/calendar";
 		</div>
 	</div>
 	<div class="py-8 px-4">
-		<LandingEvents {googleCalendarId} {googleAPIKey} client:idle />
+		<LandingEvents {googleCalendarId} {googleAPIKey} client:load />
 		<ArrowLink
 			action="ver dccalendario de eventos completo"
 			href="/eventos"

@@ -1,3 +1,9 @@
+- name: "Computación: Ciencia y Tecnología del Mundo Digital"
+  abbr: Exploratorio
+  codes:
+    - IIC1005
+  links:
+    telegram: https://t.me/+z5nwzzgCH803MjUx
 - name: Matemáticas Discretas
   codes:
     - IIC1253
@@ -151,11 +157,6 @@
     - IIC3413
   links:
     telegram: https://t.me/+uvQgYFTnhgk2Njcx
-- name: Tópicos Avanzados en Bases de Daos
-  codes:
-    - IIC3432
-  links:
-    telegram: https://t.me/joinchat/FG3F8Bhlt_X1b5CGDzWS_Q
 - name: Diseño Avanzado de Aplicaciones Web
   codes:
     - IIC3585
@@ -213,7 +214,7 @@
     - EYP2114
   links:
     telegram: https://t.me/joinchat/3hRaHQ_gbHs4OWRh
-- name: Topicos Avanzados en Bases de Datos
+- name: Tópicos Avanzados en Bases de Datos
   codes:
     - IIC3432
   links:
