@@ -4,7 +4,7 @@ import * as yaml from "js-yaml";
 import BaseLayout from "~/layouts/Base.astro";
 
 type Team = {
-    links: { [name: string]: string };
+    telegram: string;
     name: string;
     role: string;
 };
@@ -18,18 +18,17 @@ const team = yaml.load(teamRaw) as Team[];
     </div>
     <div class="bg-stone-200 shadow-inner">
         <ul class="repr-grid p-4 grid grip-tem max-w-4xl mx-auto">
-            {team.map(({ name, role, links}) => (
+            {team.map(({ name, role, telegram}) => (
             <li class="bg-white rounded py-4 px-2">
                 <div>
-                    <span>{name}</span><br/>
-                    <span>{role}</span><br/>  
+                    <div>{name}</div>
+                    <div>{role}</div>                    
                 </div>      
                 <ul>
-                    {Object.entries(links).map(([name, src]) => (
-                    <li>
-                        {name}: {src}
-                    </li>
-                    ))}
+                    Telegram:
+                    <a href={`https://t.me/${telegram}`}>
+                        @{telegram}
+                    </a>
                 </ul>      
             </li>
             ))}
