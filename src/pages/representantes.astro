@@ -1,5 +1,45 @@
 ---
-import ToDO from "~/layouts/ToDo.astro"
+import teamRaw from "/data/team.yml?raw";
+import * as yaml from "js-yaml";
+import BaseLayout from "~/layouts/Base.astro";
+
+type Team = {
+    telegram: string;
+    name: string;
+    role: string;
+};
+
+const team = yaml.load(teamRaw) as Team[];
 ---
 
-<ToDO />
+<BaseLayout >
+    <div class="px-4 py-8">
+        <h2 class="font-title text-xl">Representantes</h2>
+    </div>
+    <div class="bg-stone-200 shadow-inner">
+        <ul class="repr-grid p-4 grid grip-tem max-w-4xl mx-auto">
+            {team.map(({ name, role, telegram}) => (
+            <li class="bg-white rounded py-4 px-2">
+                <div>
+                    <div>{name}</div>
+                    <div>{role}</div>                    
+                </div>      
+                <ul>
+                    Telegram:
+                    <a href={`https://t.me/${telegram}`}>
+                        @{telegram}
+                    </a>
+                </ul>      
+            </li>
+            ))}
+        </ul> 
+    </div>
+</BaseLayout >
+
+<style lang="scss">
+    .repr-grid {
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: 1fr;
+    }
+</style>
