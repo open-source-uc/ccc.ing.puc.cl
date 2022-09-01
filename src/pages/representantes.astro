@@ -13,6 +13,13 @@ const team = yaml.load(teamRaw) as Team[];
 ---
 
 <BaseLayout >
+
+    <div class="px-4 py-8">
+        <h2 class="font-title text-xl">Sobre el capítulo</h2>        
+    </div>
+    <div class="bg-stone-200 shadow-inner">
+        <h2 class="font-title text-xl">Descripción del capítulo</h2>        
+    </div>
     <div class="px-4 py-8">
         <h2 class="font-title text-xl">Representantes</h2>
     </div>
@@ -26,7 +33,7 @@ const team = yaml.load(teamRaw) as Team[];
                 </div>      
                 <ul>
                     Telegram:
-                    <a href={`https://t.me/${telegram}`}>
+                    <a href={`https://t.me/${telegram}`} class="text-blue-500 hover:underline">
                         @{telegram}
                     </a>
                 </ul>      
