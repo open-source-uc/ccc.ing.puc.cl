@@ -1,5 +1,48 @@
 ---
-import ToDO from "~/layouts/ToDo.astro"
+import groupsRaw from "/data/groups.yml?raw";
+import * as yaml from "js-yaml";
+import BaseLayout from "~/layouts/Base.astro";
+import bannerImage from "$/og/specific/cursos.png"
+
+type Group = {
+  name: string,
+  description: string,
+  telegram: string,
+};
+
+const groups = yaml.load(groupsRaw) as Group[];
 ---
 
-<ToDO />
+<BaseLayout {bannerImage}>
+  <div class="px-4 py-8">
+    <h2 class="font-title text-xl">Grupos</h2>
+    Listado de grupos relevantes del DCC.
+  </div>
+  <div class="bg-stone-200 shadow-inner">
+      <ul class="group-grid p-4 grid grip-tem max-w-4xl mx-auto">
+          {groups.map(({ name, description, telegram }) => (
+            <li class="bg-white rounded py-4 px-2">
+              <div>
+                  <span><b>{name}</b></span>
+              </div>
+              <div>
+                {description}
+              </div>
+              <div>
+                <a href={telegram} class="text-blue-500 hover:underline">
+                  Telegram
+                </a>
+              </div>
+            </li>
+          ))}
+      </ul>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .group-grid {
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-auto-rows: 1fr;
+  }
+</style>
