@@ -1,0 +1,8 @@
+(base) {
+	@static {
+		path_regexp static \.([a-f0-9]{6})\.([a-f0-9]{1,5})$
+	}
+	encode gzip
+	header @static Cache-Control "public, max-age=604800, must-revalidate"
+	file_server
+}

@@ -14,14 +14,19 @@ const defaultCallToAction = "ir al listado";
 const { title, callToAction = defaultCallToAction, href = "#", ...props } = Astro.props as Props;
 ---
 
-<div class={classNames("card max-w-md md:max-w-xs font-bold", props.class)}>
+<div
+	class={classNames(
+		"card max-w-md md:max-w-xs font-bold relative shadow transition-all hover:shadow-lg active:shadow-sm",
+		props.class
+	)}
+>
 	<div>
 		<div class="font-title text-xl">{title}</div>
 		<div>
 			<slot />
 		</div>
 	</div>
-	<ArrowLink {href} action={callToAction} class="justify-end pt-4" />
+	<ArrowLink href={href} action={callToAction} class="justify-end pt-4" cover />
 </div>
 
 <style>

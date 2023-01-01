@@ -16,6 +16,7 @@
 		"@types/js-yaml": "^4.0.5",
 		"astro": "^1.8.0",
 		"js-yaml": "^4.1.0",
+		"jsdom": "^20.0.3",
 		"nanostores": "^0.7.1",
 		"preact": "^10.11.3",
 		"sass": "^1.52.3",
@@ -23,6 +24,7 @@
 		"vite": "^3.2.5"
 	},
 	"devDependencies": {
+		"@types/jsdom": "^20.0.1",
 		"prettier": "^2.7.1",
 		"prettier-plugin-tailwindcss": "^0.2.1"
 	}

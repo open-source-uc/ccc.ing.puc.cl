@@ -4,33 +4,29 @@ import LandingCard from "~/components/LandingCard.astro";
 import ArrowLink from "~/components/ArrowLink.svelte";
 import LinkCard from "~/components/LinkCard.astro";
 import LandingEvents from "~/components/LandingEvents.svelte";
-import landingImg from "$/landing.svg";
-import capImg from "$/imgs/capitulo.webp";
-import merchImg from "$/imgs/merch.webp";
-import telegramIcon from "$/icons/telegram.svg";
-import linkedinIcon from "$/icons/linkedin.svg";
-import facebookIcon from "$/icons/facebook.svg";
-import instagramIcon from "$/icons/instagram.svg";
+import telegramIcon from "~/icons/telegram.svg";
+import linkedinIcon from "~/icons/linkedin.svg";
+import facebookIcon from "~/icons/facebook.svg";
+import instagramIcon from "~/icons/instagram.svg";
 import { getNextEventsCalendar } from "~/lib/calendar";
 
-// Esto se llama aquí para que se tenga eventos prerenderizados
-// y luego se actualice el calendario con los más proximos
-const calendarData = await getNextEventsCalendar(import.meta.env.BUILD_GOOGLE_API_KEY);
+// Esto se llama aquí para que se tenga metadatos del calendario en el build
+const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GOOGLE_API_KEY);
 ---
 
 <BaseLayout>
 	<!-- Imagen principal que cubre la pantalla horizontalmente -->
-	<div class="w-full bg-gray-300 shadow-inner min-h-100px">
+	<div class="min-h-100px w-full bg-gray-300 shadow-inner">
 		<img
 			class="mx-auto"
-			src={landingImg}
+			src="landing.svg"
 			width="356"
 			height="192"
 			alt="Imagén del logo del capítulo junto a su mascota, dccín"
 		/>
 	</div>
 	<!-- 3 Targetas -->
-	<div class="flex flex-col md:flex-row gap-4 px-2 pb-4 items-center justify-center -mt-4">
+	<div class="-mt-4 flex flex-col items-center justify-center gap-4 px-2 pb-4 md:flex-row">
 		<LandingCard title="Cursos DCC" class="bg-light-morado" href="/cursos">
 			Listado de cursos del departamento, con sus respectivos links a Telegram
 		</LandingCard>
@@ -42,61 +38,62 @@ const calendarData = await getNextEventsCalendar(import.meta.env.BUILD_GOOGLE_AP
 		</LandingCard>
 	</div>
 	<!-- Sobre el capítulo -->
-	<div class="bg-gray-100 flex flex-col justify-center items-center md:flex-row">
-		<div class="w-full h-40 max-h-40 md:w-max-fit md:w-[500px] md:h-[200px] md:max-h-[200px] md:p-4">
+	<div class="flex flex-col items-center justify-center bg-gray-100 md:flex-row">
+		<div class="md:w-max-fit h-40 max-h-40 w-full md:h-[200px] md:max-h-[200px] md:w-[500px] md:p-4">
 			<img
-				src={capImg}
-				class="object-cover w-full h-full md:rounded"
+				src="/imgs/capitulo.webp"
+				class="h-full w-full object-cover md:rounded"
 				width="750"
 				height="562"
 				alt="Foto de las personas que organizaron el evento de programación competitiva"
 			/>
 		</div>
-		<div class="p-8 text-center max-w-md">
-			<h2 class="font-title text-xl mb-4">Sobre el capítulo</h2>
+		<div class="max-w-md p-8 text-center">
+			<h2 class="mb-4 font-title text-xl">Sobre el capítulo</h2>
 			<p class="leading-tight">
 				Somos una organización dedicada a fomentar el desarrollo de la comunidad del
-				<abbr title="Departamento de Ciencia de la Computación de la Universidad Católica de Chile">DCC UC</abbr>, con
-				la creación de diversos espacios y actividades.
+				<abbr title="Departamento de Ciencia de la Computación de la Universidad Católica de Chile" class="no-underline"
+					>DCC UC</abbr
+				>, con la creación de diversos espacios y actividades.
 			</p>
-			<div class="mt-4 flex flex-col xs:flex-row items-center justify-center gap-4">
+			<div class="mt-4 flex flex-col items-center justify-center gap-4 xs:flex-row">
 				<!-- Redes sociales -->
 				<div class="flex gap-1">
 					<a href="https://t.me/joinchat/EjPdwkIoyQB3037UcnTyhA" class="p-1">
-						<img class="w-6 h-6" src={telegramIcon} alt="Telegr am icon" />
+						<img class="h-6 w-6" src={telegramIcon} alt="Telegr am icon" />
 					</a>
 					<a href="https://www.linkedin.com/company/dcc-ccc/" class="p-1">
-						<img class="w-6 h-6" src={linkedinIcon} alt="LinkedIn icon" />
+						<img class="h-6 w-6" src={linkedinIcon} alt="LinkedIn icon" />
 					</a>
 					<a href="https://www.facebook.com/acm.puc/" class="p-1">
-						<img class="w-6 h-6" src={facebookIcon} alt="Facebook icon" />
+						<img class="h-6 w-6" src={facebookIcon} alt="Facebook icon" />
 					</a>
 					<a href="https://www.instagram.com/ccc.ing.uc" class="p-1">
-						<img class="w-6 h-6" src={instagramIcon} alt="Instagram icon" />
+						<img class="h-6 w-6" src={instagramIcon} alt="Instagram icon" />
 					</a>
 				</div>
 				<!-- Separador -->
-				<div class="w-0.5 bg-black h-4 rounded-full flex-shrink-0 hidden xs:block"></div>
+				<div class="hidden h-4 w-0.5 flex-shrink-0 rounded-full bg-black xs:block"></div>
 				<ArrowLink action="más sobre el capítulo" href="/representantes#capitulo" class="stroke-black" />
 			</div>
 		</div>
 	</div>
 	<div class="py-8 px-4">
-		<LandingEvents {calendarData} client:load />
+		<LandingEvents client:load initialCalendarData={initialCalendarData} />
 		<ArrowLink
-			action="ver dccalendario de eventos completo"
+			action="Ver dccalendario de eventos completo"
 			href="/eventos"
 			class="stroke-gray-700 text-gray-700 w-fit mx-auto mt-8 py-2"
 		/>
 	</div>
 	<div class="bg-gray-100 px-4 py-8">
-		<h2 class="font-title text-xl text-center py-8">Otros links</h2>
-		<div class="flex flex-wrap justify-center items-center gap-4">
-			<LinkCard href="/merch" img={merchImg} name="Merch" />
-			<LinkCard href="/fotos" img={merchImg} name="Fotos" />
-			<LinkCard href="/guias" img={merchImg} name="Guias" />
-			<LinkCard href="#" img={merchImg} name="Recopilación Cursos" />
-			<LinkCard href="/jams" img={merchImg} name="Jams Realizadas" />
+		<h2 class="py-8 text-center font-title text-xl">Otros links</h2>
+		<div class="flex flex-wrap items-center justify-center gap-4">
+			<LinkCard href="/merch" img="/imgs/merch.webp" name="Merch" />
+			<LinkCard href="/fotos" img="/imgs/merch.webp" name="Fotos" />
+			<LinkCard href="/guias" img="/imgs/merch.webp" name="Guias" />
+			<LinkCard href="#" img="/imgs/merch.webp" name="Recopilación Cursos" />
+			<LinkCard href="/jams" img="/imgs/merch.webp" name="Jams Realizadas" />
 		</div>
 	</div>
 </BaseLayout>
