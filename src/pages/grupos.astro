@@ -1,26 +1,6 @@
 ---
-import groupsRaw from "/data/groups.yml?raw";
-import * as yaml from "js-yaml";
 import CardsLayout from "~/layouts/Cards.astro";
-import { JSDOM } from "jsdom";
-
-type Group = {
-	name: string;
-	description: string;
-	telegram: string;
-};
-
-const groups = yaml.load(groupsRaw) as Group[];
-
-const groupsWithImage = await Promise.all(
-	groups.map(async (group) => {
-		const response = await fetch(group.telegram);
-		const html_text = await response.text();
-		const html = new JSDOM(html_text);
-		const img_element = html.window.document.querySelector(".tgme_page_photo_image") as HTMLImageElement | undefined;
-		return { ...group, img: img_element?.src };
-	})
-);
+import Grupos from "./grupos.svelte";
 ---
 
 <CardsLayout bannerImage="/og/specific/cursos.png">
@@ -28,29 +8,5 @@ const groupsWithImage = await Promise.all(
 		<h2 class="font-title text-xl">Grupos</h2>
 		Listado de grupos relevantes del DCC.
 	</Fragment>
-	<ul class="group-grid grip-tem mx-auto grid max-w-4xl p-4">
-		{
-			groupsWithImage.map(({ name, description, telegram, img }) => (
-				<li class="relative flex flex-col rounded-md bg-white p-4 text-center shadow transition-shadow hover:shadow-lg active:shadow-sm">
-					<div class="aspect-square overflow-clip rounded-lg border-2 border-stone-700">
-						<img src={img} alt={name} class="scale-105" />
-					</div>
-					<div class="my-2 font-bold text-stone-900">{name}</div>
-					<div class="flex-grow leading-tight text-stone-700">{description}</div>
-					<a href={telegram} class="mt-2 text-blue-500 hover:underline">
-						<span aria-hidden="true" class="absolute inset-0" />
-						Telegram
-					</a>
-				</li>
-			))
-		}
-	</ul>
+	<Grupos client:idle />
 </CardsLayout>
-
-<style lang="scss">
-	.group-grid {
-		gap: 15px;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		grid-auto-rows: 1fr;
-	}
-</style>

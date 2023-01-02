@@ -11,7 +11,7 @@
 		message_url: string;
 	};
 
-	const promise = pb.collection("ayudantias").getFullList<Ayudantia>();
+	const promise = pb.collection("assistantships").getFullList<Ayudantia>();
 </script>
 
 {#await promise}

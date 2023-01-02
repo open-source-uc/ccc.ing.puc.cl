@@ -4,7 +4,6 @@ export const googleAPIKey = import.meta.env.PUBLIC_GOOGLE_API_KEY;
 export async function getNextEventsCalendar(key: string = googleAPIKey) {
 	const now = new Date().toISOString();
 	const url = `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events?timeMin=${now}&key=${key}`;
-	console.log(url);
 	const response = await fetch(url);
 	const data = (await response.json()) as GoogleCalendarResponse;
 

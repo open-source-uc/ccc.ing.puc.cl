@@ -24,7 +24,7 @@ const { lang, class: klass, ...headProps } = Astro.props as Props;
 			<a href="https://capitulo-acm-puc.github.io/" class="py-1 underline"> Ir a la página antigua</a>
 		</div>
 		<Navbar client:load />
-		<div class={classNames("flex-1", klass)}>
+		<div class={classNames("flex-1 flex flex-col", klass)}>
 			<slot />
 		</div>
 		<Footer />

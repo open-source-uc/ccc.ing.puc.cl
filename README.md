@@ -7,7 +7,8 @@ hecha en [AstroJS](https://astro.build/).
 
 ## Setup
 
-Para desarrollar necesitas usar [npm](https://www.npmjs.com/).
+Para desarrollar necesitas usar [npm](https://www.npmjs.com/)
+e instalar [pocketbase](https://pocketbase.io/).
 
 Instala las dependencias con:
 
@@ -29,6 +30,14 @@ Para correr el servidor de desarrollo, utiliza
 npm run dev
 ```
 
+Además, puedes correr la instancia de pocketbase con
+
+```bash
+pocketbase serve
+```
+
+O conectarte a la instancia de pocketbase de producción.
+
 ## ¿Porque AstroJS? 🤔
 
 AstroJS permite usar fácilmente componentes de otras librerías de UI,
@@ -37,11 +46,11 @@ permite que cualquiera pueda armar una parte interactiva con las
 herramientas que más conoce 🚀
 
 Ideas:
-- Simulador de la carrera de ayudantes
-- Integración del DCCalendario
-- Galeria de fotos hosteada en otra parte
-- Integración con las fotos de Instagram
-- Integración con DCChannel, DCCAcademic, etc.
+- [ ] Simulador de la carrera de ayudantes
+- [X] Integración del DCCalendario
+- [ ] Galeria de fotos hosteada en otra parte
+- [ ] Integración con las fotos de Instagram (parece muy complicado)
+- [ ] Integración con DCChannel, DCCAcademic, etc.
 
 ## Imágenes
 
@@ -70,5 +79,6 @@ cwebp [old.jpg] -o [new.webp] -q 90 -crop [x] [y] [w] [h]  -resize [W]x[H]
 La página utiliza pocketbase configurado como se indica en su documentación. Los archivos son estáticos y todo es servido con Caddy.
 
 ```bash
+npm run build
 rsync -r -h -u --delete -i  dist/. ccc:/var/www/html/web-ccc/.
 ```

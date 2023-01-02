@@ -1,70 +1,44 @@
 ---
-import teamRaw from "/data/team.yml?raw";
-import * as yaml from "js-yaml";
 import BaseLayout from "~/layouts/Base.astro";
-
-type Team = {
-    telegram: string;
-    name: string;
-    role: string;
-};
-
-const team = yaml.load(teamRaw) as Team[];
+import Representantes from "./representantes.svelte";
 ---
 
-<BaseLayout >
-
-    <div class="px-4 py-8">
-        <h2 class="font-title text-xl">Sobre el capítulo</h2>        
-    </div>
-    <div class="grid grid-cols-1 content-center bg-gray-100 shadow-inner">
-        <div class="p-8 text-justify max-w-2xl mx-auto">
-            <p>
-                ¡Hola!, somos el capítulo de ciencias de la computación y
-                somos los representantes de los estudiantes del DCC.
-            </p><br/>
-            <p>
-                Nos interesa generar una <b>excelente</b> comunidad para un departamento que sigue recibiendo 
-                más estudiantes, haciendo de que tu paso por el DCC sea una experiencia inolvidable. 
-            </p><br/>
-            <p>
-                ¿Cómo lo lograremos? Generando eventos para potenciar redes y proyectos a lo largo de tus años como estudiante.
-            </p><br/>
-            <p>
-                Esto significa que <b>TU</b> eres la pieza principal de nuestro proyecto.
-            </p><br/>
-            <p>Si quieres saber más o participar no dudes en contactarnos.</p><br/>
-            <p>Con cariño</p>
-            <p>CCC</p>
-        </div>   
-    </div>
-    <div class="px-4 py-8">
-        <h2 class="font-title text-xl">Representantes</h2>
-    </div>
-    <div class="bg-stone-200 shadow-inner">
-        <ul class="repr-grid p-4 grid grip-tem max-w-4xl mx-auto">
-            {team.map(({ name, role, telegram}) => (
-            <li class="bg-white rounded py-4 px-2">
-                <div>
-                    <div>{name}</div>
-                    <div>{role}</div>                    
-                </div>      
-                <ul>
-                    Telegram:
-                    <a href={`https://t.me/${telegram}`} class="text-blue-500 hover:underline">
-                        @{telegram}
-                    </a>
-                </ul>      
-            </li>
-            ))}
-        </ul> 
-    </div>
-</BaseLayout >
+<BaseLayout>
+	<div class="px-4 py-8">
+		<h2 class="font-title text-xl">Sobre el capítulo</h2>
+	</div>
+	<div class="grid grid-cols-1 content-center bg-gray-100 shadow-inner">
+		<div class="prose mx-auto max-w-2xl p-8 text-justify">
+			<p>
+				¡Hola!, somos el capítulo de ciencias de la computación y somos los representantes de los estudiantes del DCC.
+			</p>
+			<p>
+				Nos interesa generar una <b>excelente</b> comunidad para un departamento que sigue recibiendo más estudiantes, haciendo
+				de que tu paso por el DCC sea una experiencia inolvidable.
+			</p>
+			<p>
+				¿Cómo lo lograremos? Generando eventos para potenciar redes y proyectos a lo largo de tus años como estudiante.
+			</p>
+			<p>
+				Esto significa que <b>TU</b> eres la pieza principal de nuestro proyecto.
+			</p>
+			<p>Si quieres saber más o participar no dudes en contactarnos.</p>
+			<p>Con cariño</p>
+			<p>CCC</p>
+		</div>
+	</div>
+	<div class="px-4 py-8">
+		<h2 class="font-title text-xl">Representantes</h2>
+	</div>
+	<div class="bg-stone-200 shadow-inner">
+		<Representantes client:idle />
+	</div>
+</BaseLayout>
 
 <style lang="scss">
-    .repr-grid {
-        gap: 15px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-auto-rows: 1fr;
-    }
+	.repr-grid {
+		gap: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-auto-rows: 1fr;
+	}
 </style>
