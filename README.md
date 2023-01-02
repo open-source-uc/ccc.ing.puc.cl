@@ -64,3 +64,11 @@ cwebp [old.jpg] -o [new.webp] -q 90 -crop [x] [y] [w] [h]  -resize [W]x[H]
 ```
 
 > Puedes dejar las imagenes originales con la subextensión `*.original.*`
+
+## Deploy
+
+La página utiliza pocketbase configurado como se indica en su documentación. Los archivos son estáticos y todo es servido con Caddy.
+
+```bash
+rsync -r -h -u --delete -i  dist/. ccc:/var/www/html/web-ccc/.
+```

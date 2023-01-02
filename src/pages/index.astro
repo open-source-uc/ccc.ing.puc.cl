@@ -16,7 +16,7 @@ const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GO
 
 <BaseLayout>
 	<!-- Imagen principal que cubre la pantalla horizontalmente -->
-	<div class="min-h-100px w-full bg-gray-300 shadow-inner">
+	<div id="ccc" class="min-h-100px w-full bg-gray-300 shadow-inner">
 		<img
 			class="mx-auto"
 			src="landing.svg"
@@ -97,3 +97,12 @@ const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GO
 		</div>
 	</div>
 </BaseLayout>
+
+<style>
+	#ccc {
+		background-image: url("/ccc-firmas.svg");
+		background-size: contain;
+		background-blend-mode: soft-light;
+		background-position: 50%;
+	}
+</style>

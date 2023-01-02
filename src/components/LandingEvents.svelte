@@ -38,7 +38,7 @@
 						datetime={date.toISOString()}
 						class={classNames("leading-tight", loading ? "text-transparent bg-gray-200 rounded" : "text-gray-500")}
 					>
-						{formatDateTime(date)}
+						{formatDateTime(start?.dateTime || start?.date)}
 					</time>
 				{/if}
 			</div>

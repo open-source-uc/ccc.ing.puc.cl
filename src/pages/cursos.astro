@@ -18,11 +18,11 @@ const courses = yaml.load(coursesRaw) as Course[];
 		<h2 class="font-title text-xl">Cursos</h2>
 		Listado de cursos importantes para la carrera
 	</Fragment>
-	<ul class="course-grid grip-tem mx-auto grid max-w-4xl p-4">
+	<ul class="course-grid mx-auto grid max-w-4xl p-4">
 		{
 			courses.map(({ codes, name, abbr, links }) => (
-				<li class="rounded bg-white py-4 px-2">
-					<div>
+				<li class="flex flex-col rounded bg-white py-4 px-2">
+					<div class="flex-grow">
 						<>
 							{abbr ? (
 								<>
@@ -36,7 +36,7 @@ const courses = yaml.load(coursesRaw) as Course[];
 					<ul>
 						{Object.entries(links).map(([name, href]) => (
 							<li>
-								<a href={href} class="text-blue-500 hover:underline">
+								<a href={href} class="p-1 text-blue-500 hover:underline">
 									{name}
 								</a>
 							</li>
