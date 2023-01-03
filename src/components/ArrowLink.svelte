@@ -16,7 +16,7 @@
 </script>
 
 <a
-	class={classNames("flex items-center gap-1 px-1 text-right leading-none hover:underline", klass)}
+	class={classNames("flex items-center gap-1 text-right leading-none hover:underline", klass)}
 	{href}
 	aria-disabled={disabled}
 >

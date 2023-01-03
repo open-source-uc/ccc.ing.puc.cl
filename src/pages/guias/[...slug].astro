@@ -1,0 +1,29 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import BaseLayout from "~/layouts/Base.astro";
+
+export async function getStaticPaths() {
+	const docs = await getCollection("guides");
+	return docs.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: CollectionEntry<"guides">;
+}
+
+const { data, render } = Astro.props.entry;
+const { Content } = await render();
+---
+
+<BaseLayout title={data.title} class="bg-stone-200">
+	<main class="prose mx-auto bg-stone-50 p-8">
+		<div>
+			<h1>{data.title}</h1>
+			Por {data.author}
+		</div>
+		<Content />
+	</main>
+</BaseLayout>

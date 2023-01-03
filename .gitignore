@@ -12,3 +12,4 @@ pnpm-debug.log*
 *.py
 *.original.*
 /pb*
+*.generated.?*.ts
