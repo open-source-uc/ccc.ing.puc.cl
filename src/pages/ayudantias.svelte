@@ -15,7 +15,7 @@
 </script>
 
 {#await promise}
-	<div class="text-center m-4 text-stone-700">Cangando...</div>
+	<div class="text-center m-4 text-stone-700">Cargando...</div>
 {:then ayudantias}
 	<ul class="flex flex-col gap-6 mx-auto max-w-2xl p-4">
 		{#each ayudantias.sort(compareStringDates((e) => e.closes_at)) as { closes_at, course, description, url, message_url }}
