@@ -2,6 +2,7 @@
 import groupsRaw from "/data/groups.yml?raw";
 import * as yaml from "js-yaml";
 import BaseLayout from "~/layouts/Base.astro";
+import ArrowLink from "~/components/ArrowLink.svelte";
 import bannerImage from "$/og/specific/cursos.png"
 
 type Group = {
@@ -21,18 +22,15 @@ const groups = yaml.load(groupsRaw) as Group[];
   <div class="bg-stone-200 shadow-inner">
       <ul class="group-grid p-4 grid grip-tem max-w-4xl mx-auto">
           {groups.map(({ name, description, telegram }) => (
-            <li class="bg-white rounded py-4 px-2">
-              <div>
+            <li class="bg-white rounded py-4 px-2 flex flex-col justify-around">
+              <div class="py-2">
                   <span><b>{name}</b></span>
               </div>
-              <div>
+              <div class="py-2">
                 {description}
               </div>
-              <div>
-                <a href={telegram} class="text-blue-500 hover:underline">
-                  Telegram
-                </a>
-              </div>
+                <ArrowLink action="Telegram" href={telegram}
+                 class="text-blue-500 py-2"/>
             </li>
           ))}
       </ul>

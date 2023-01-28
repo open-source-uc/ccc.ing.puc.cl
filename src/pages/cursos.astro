@@ -26,9 +26,9 @@ const courses = yaml.load(coursesRaw) as Course[];
             {courses.map(({ codes, name, links }) => (
             <li class="bg-white rounded py-4 px-2 flex">
                 <div class="flex flex-col justify-around">
-                    <span>{name}</span>
-                    {(codes && codes.length > 0) ? <span>({codes.join(", ")})</span> : null}
-                    <ArrowLink action="Telegram" href={links.telegram} class="text-blue-500"/>
+                    <p class="py-1">{name}</p>
+                    {(codes && codes.length > 0) ? <p class="py-1">Sigla: {codes.join(", ")}</p> : null}
+                    <ArrowLink action="Telegram" href={links.telegram} class="text-blue-500 py-1"/>
                 </div>
             </li>
             ))}
