@@ -1,7 +1,9 @@
 ---
 import coursesRaw from "/data/courses.yml?raw";
 import * as yaml from "js-yaml";
-import BaseLayout from "~/layouts/Base.astro"
+import BaseLayout from "~/layouts/Base.astro";
+import ArrowLink from "~/components/ArrowLink.svelte";
+import telegramIcon from "$/icons/telegram.svg";
 import bannerImage from "$/og/specific/cursos.png"
 
 type Course = {
@@ -21,22 +23,13 @@ const courses = yaml.load(coursesRaw) as Course[];
     </div>
     <div class="bg-stone-200 shadow-inner">
         <ul class="course-grid p-4 grid grip-tem max-w-4xl mx-auto">
-            {courses.map(({ codes, name, abbr, links }) => (
-            <li class="bg-white rounded py-4 px-2">
-                <div>
-                    <>{abbr ? ( <><span>{abbr}</span> - </> ) : null}</>
+            {courses.map(({ codes, name, links }) => (
+            <li class="bg-white rounded py-4 px-2 flex">
+                <div class="flex flex-col justify-around">
                     <span>{name}</span>
-                    <>{(codes && codes.length > 0) ? <span>({codes.join(", ")})</span> : null}</>
+                    {(codes && codes.length > 0) ? <span>({codes.join(", ")})</span> : null}
+                    <ArrowLink action="Telegram" href={links.telegram} class="text-blue-500"/>
                 </div>
-                <ul>
-                    {Object.entries(links).map(([name, href]) => (
-                    <li>
-                        <a {href} class="text-blue-500 hover:underline">
-                            {name}
-                        </a>
-                    </li>
-                    ))}
-                </ul>
             </li>
             ))}
         </ul>
