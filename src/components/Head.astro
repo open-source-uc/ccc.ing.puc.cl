@@ -1,37 +1,35 @@
 ---
-import SocialBanner from "$/og/landscape.png?url";
-import SocialSquare from "$/og/square.png?url";
-import favicon from "$/favicon.svg?url";
-
 export const meta = {
-    title: "Capítulo de Ciencia de la Computación",
-    description: "Página Web del Capítulo de Ciencia de la Computación de la Universidad Católica",
+	title: "Capítulo de Ciencia de la Computación",
+	description: "Página Web del Capítulo de Ciencia de la Computación de la Universidad Católica",
 };
 
 export type Props = {
-    title?: string;
-    description?: string;
-    bannerImage?: string;
-    scuareImage?: string;
-}
+	title?: string;
+	description?: string;
+	bannerImage?: string;
+	scuareImage?: string;
+};
+
+const { url } = Astro.request.url;
 
 const {
-    title = meta.title,
-    description = meta.description,
-    bannerImage = SocialBanner,
-    scuareImage = SocialSquare
+	title = meta.title,
+	description = meta.description,
+	bannerImage = "/og/landscape.png",
+	scuareImage = "/og/square.png",
 } = Astro.props as Props;
 ---
 
 <!-- Preload Fonts -->
-<link rel="preload" href="/fonts/Oxanium-B.ttf" as="font" type="font/ttf">
-<link rel="preload" href="/fonts/Ubuntu-M.ttf" as="font" type="font/ttf">
-<link rel="preload" href="/fonts/Ubuntu-R.ttf" as="font" type="font/ttf">
+<link rel="preload" href="/fonts/Oxanium-B.ttf" as="font" type="font/ttf" />
+<link rel="preload" href="/fonts/Ubuntu-M.ttf" as="font" type="font/ttf" />
+<link rel="preload" href="/fonts/Ubuntu-R.ttf" as="font" type="font/ttf" />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/svg" href={favicon} />
+<link rel="icon" type="image/svg" href="/favicon.svg" />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -41,6 +39,8 @@ const {
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
+<meta property="og:url" content={url} />
+<meta property="og:site_name" content="Capítulo de Ciencia de la Computación" />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={scuareImage} />
 

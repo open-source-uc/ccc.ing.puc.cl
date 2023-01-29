@@ -1,0 +1,18 @@
+---
+import CardsLayout from "~/layouts/Cards.astro";
+import Ayudantias from "./ayudantias.svelte";
+---
+
+<CardsLayout class="flex-col flex" title="Ayudantías">
+	<Fragment slot="header">
+		<h2 class="font-title text-xl">Listado de ayudantías</h2>
+		<p>
+			Para más información, unete a
+			<!-- in another tab -->
+			<a class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer" href="https://t.me/DCC_UC"
+				>DCCacademic</a
+			>!
+		</p>
+	</Fragment>
+	<Ayudantias client:only />
+</CardsLayout>

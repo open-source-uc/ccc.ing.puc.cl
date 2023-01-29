@@ -1,52 +1,57 @@
 ---
 import coursesRaw from "/data/courses.yml?raw";
 import * as yaml from "js-yaml";
-import BaseLayout from "~/layouts/Base.astro"
-import bannerImage from "$/og/specific/cursos.png"
+import CardsLayout from "~/layouts/Cards.astro";
 
 type Course = {
-    codes: string[];
-    abbr?: string;
-    name: string;
-    links: { [name: string]: string };
+	codes: string[];
+	abbr?: string;
+	name: string;
+	links: { [name: string]: string };
 };
 
 const courses = yaml.load(coursesRaw) as Course[];
 ---
 
-<BaseLayout {bannerImage}>
-    <div class="px-4 py-8">
-        <h2 class="font-title text-xl">Cursos</h2>
-        Listado de cursos importantes para la carrera
-    </div>
-    <div class="bg-stone-200 shadow-inner">
-        <ul class="course-grid p-4 grid grip-tem max-w-4xl mx-auto">
-            {courses.map(({ codes, name, abbr, links }) => (
-            <li class="bg-white rounded py-4 px-2">
-                <div>
-                    <>{abbr ? ( <><span>{abbr}</span> - </> ) : null}</>
-                    <span>{name}</span>
-                    <>{(codes && codes.length > 0) ? <span>({codes.join(", ")})</span> : null}</>
-                </div>
-                <ul>
-                    {Object.entries(links).map(([name, href]) => (
-                    <li>
-                        <a {href} class="text-blue-500 hover:underline">
-                            {name}
-                        </a>
-                    </li>
-                    ))}
-                </ul>
-            </li>
-            ))}
-        </ul>
-    </div>
-</BaseLayout>
+<CardsLayout bannerImage="/og/specific/cursos.png">
+	<Fragment slot="header">
+		<h2 class="font-title text-xl">Cursos</h2>
+		Listado de cursos importantes para la carrera
+	</Fragment>
+	<ul class="course-grid mx-auto grid max-w-4xl p-4">
+		{
+			courses.map(({ codes, name, abbr, links }) => (
+				<li class="flex flex-col rounded bg-white py-4 px-2">
+					<div class="flex-grow">
+						<>
+							{abbr ? (
+								<>
+									<span>{abbr}</span> -{" "}
+								</>
+							) : null}
+						</>
+						<span>{name}</span>
+						<>{codes && codes.length > 0 ? <span>({codes.join(", ")})</span> : null}</>
+					</div>
+					<ul>
+						{Object.entries(links).map(([name, href]) => (
+							<li>
+								<a href={href} class="p-1 text-blue-500 hover:underline">
+									{name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</li>
+			))
+		}
+	</ul>
+</CardsLayout>
 
 <style lang="scss">
-    .course-grid {
-        gap: 15px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-auto-rows: 1fr;
-    }
+	.course-grid {
+		gap: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-auto-rows: 1fr;
+	}
 </style>

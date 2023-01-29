@@ -3,33 +3,32 @@
 @tailwind utilities;
 
 body {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 ::selection {
-    background: theme(colors.dark-morado / 75%);
-    color: theme("colors.white")
+	background: theme(colors.dark-morado / 75%);
+	color: theme("colors.white");
 }
 
 /* Fonts (don't forget to update the Head component) */
 
 @font-face {
-    font-family: Oxanium;
-    src: url("/fonts/Oxanium-B.ttf");
-    font-display: swap;
+	font-family: Oxanium;
+	src: url("/fonts/Oxanium-B.ttf");
+	font-display: swap;
 }
 
 @font-face {
-    font-family: Ubuntu;
-    src: url("/fonts/Ubuntu-M.ttf");
-    font-weight: bold;
-    font-display: swap;
+	font-family: Ubuntu;
+	src: url("/fonts/Ubuntu-M.ttf");
+	font-weight: bold;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: Ubuntu;
-    src: url("/fonts/Ubuntu-R.ttf");
-    font-weight: normal;
-    font-display: swap;
+	font-family: Ubuntu;
+	src: url("/fonts/Ubuntu-R.ttf");
+	font-weight: normal;
+	font-display: swap;
 }
-

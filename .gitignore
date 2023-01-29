@@ -3,9 +3,13 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+bun.lockb
+pnpm-lock.yaml
 pnpm-debug.log*
 .env
 .env.production
 .DS_Store
 *.py
 *.original.*
+/pb*
+*.generated.?*.ts

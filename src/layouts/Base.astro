@@ -18,13 +18,13 @@ const { lang, class: klass, ...headProps } = Astro.props as Props;
 		<Head {...headProps} />
 	</head>
 
-	<body class="flex flex-col min-h-[100vh] min-h-[100svh] h-fit">
-		<div class="absolute w-screen min-h-fit z-50 bg-red-700 text-white font-bold text-center">
+	<body class="flex h-fit min-h-[100vh] min-h-[100svh] flex-col">
+		<div class="absolute z-50 min-h-fit w-screen bg-red-700 text-center font-bold text-white">
 			En desarrollo! -
-			<a href="https://capitulo-acm-puc.github.io/" class="py-4 underline"> Ir a la página antigua</a>
+			<a href="https://capitulo-acm-puc.github.io/" class="py-1 underline"> Ir a la página antigua</a>
 		</div>
 		<Navbar client:load />
-		<div class={classNames("flex-1", klass)}>
+		<div class={classNames("flex-1 flex flex-col", klass)}>
 			<slot />
 		</div>
 		<Footer />

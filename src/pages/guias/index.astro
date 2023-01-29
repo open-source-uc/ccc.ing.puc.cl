@@ -1,5 +1,22 @@
 ---
-import ToDO from "~/layouts/ToDo.astro"
+import { getCollection } from "astro:content";
+import BaseLayout from "~/layouts/Base.astro";
+import ArrowLink from "~/components/ArrowLink.svelte";
+
+const allGuides = await getCollection("guides");
 ---
 
-<ToDO />
+<BaseLayout title="Guias" class="bg-stone-200">
+	<main class="mx-auto max-w-3xl p-4">
+		<h1 class="mb-2 text-center text-3xl font-bold">Guías</h1>
+		{
+			allGuides.map(({ data, slug }) => (
+				<article class="relative flex flex-col rounded bg-slate-50 px-4 py-6 shadow transition-shadow hover:shadow-lg active:shadow-sm">
+					<h2 class="text-lg font-bold">{data.title}</h2>
+					<div>Por {data.author}</div>
+					<ArrowLink href={`/guias/${slug}`} class="stroke-stone-800 pt-2" action="Ir a la guía" cover />
+				</article>
+			))
+		}
+	</main>
+</BaseLayout>

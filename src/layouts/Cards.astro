@@ -1,0 +1,16 @@
+---
+import BaseLayout, { Props as BaseProps } from "~/layouts/Base.astro";
+
+export type Props = BaseProps;
+
+const { ...baseProps } = Astro.props as Props;
+---
+
+<BaseLayout {...baseProps}>
+	<div class="mx-auto w-full max-w-4xl px-4 py-8">
+		<slot name="header" />
+	</div>
+	<div class="flex-grow bg-stone-200 shadow-inner">
+		<slot />
+	</div>
+</BaseLayout>
