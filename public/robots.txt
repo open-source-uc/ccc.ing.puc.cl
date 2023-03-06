@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /cursos
+Disallow: /ayudantias
