@@ -240,6 +240,17 @@
     - IIC3757
   links:
     telegram: https://t.me/+Ipb5tVQK6wUzOTAx
+- name: Complejidad Computacional
+  codes:
+    - IIC3242
+  links:
+    telegram: https://t.me/+-n8q6qdd86o5ZDQx
+- name: Algoritmos y Aleatoriedad
+  codes:
+    - IIC3284
+    - IMT2117
+  links:
+    telegram: https://t.me/+DHgGXyTvwr4zNTQx
 - name: Mecánica de Fluidos
   codes:
     - ICH1104
