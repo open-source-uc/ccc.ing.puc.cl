@@ -28,7 +28,6 @@
 		<a class="nav-item" href="/grupos">Grupos</a>
 		<a class="nav-item" href="/ayudantias">Ayudantías</a>
 		<a class="nav-item" href="/guias">Guias</a>
-		<a class="nav-item" href="/merch">Merch</a>
 	</div>
 </nav>
 
