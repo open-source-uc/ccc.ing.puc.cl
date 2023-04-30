@@ -12,7 +12,7 @@
 - name: Visualización de Información
   abbr: Infovis
   codes:
-    - IC2026
+    - IIC2026
   links:
     telegram: https://t.me/joinchat/LKlvHpQ7LkY4NzBh
 - name: Diseño Detallado de Software
@@ -60,7 +60,7 @@
     - IIC2223
   links:
     telegram: https://t.me/joinchat/CogUgBTfxRlZRxWOwze7Sw
-- name: Grupo de Diseño y Análisis de Algoritmos
+- name: Diseño y Análisis de Algoritmos
   codes:
     - IIC2283
   links:
