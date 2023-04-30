@@ -1,0 +1,13 @@
+---
+import BaseLayout from "~/layouts/Base.astro";
+import Grupos from "./Grupos.svelte";
+---
+
+<BaseLayout bannerImage="/og/specific/grupos.png">
+	<div class="mx-auto w-full max-w-4xl px-4 py-8">
+		<h2 class="font-title text-xl">Listado de grupos relevantes del DCC</h2>
+	</div>
+	<div class="flex-grow bg-stone-200 shadow-inner">
+		<Grupos client:idle />
+	</div>
+</BaseLayout>
