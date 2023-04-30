@@ -31,7 +31,7 @@
 	</div>
 </nav>
 
-<style>
+<style lang="postcss">
 	nav {
 		@apply sticky top-0 z-30 flex w-full flex-wrap items-center justify-between gap-8 bg-white p-4 shadow-md md:flex-nowrap md:justify-center;
 	}
