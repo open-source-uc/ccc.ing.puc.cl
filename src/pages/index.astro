@@ -1,13 +1,20 @@
 ---
 import BaseLayout from "~/layouts/Base.astro";
+
 import LandingCard from "~/components/LandingCard.astro";
 import ArrowLink from "~/components/ArrowLink.svelte";
 import LinkCard from "~/components/LinkCard.astro";
 import LandingEvents from "~/components/LandingEvents.svelte";
+
 import telegramIcon from "~/assets/icons/telegram.svg";
 import linkedinIcon from "~/assets/icons/linkedin.svg";
 import facebookIcon from "~/assets/icons/facebook.svg";
 import instagramIcon from "~/assets/icons/instagram.svg";
+
+import ayudanteImg from "~/assets/link-imgs/ayudante.jpg";
+import dccImg from "~/assets/link-imgs/dcc.svg";
+import LicDCImg from "~/assets/link-imgs/licdc.png";
+
 import { getNextEventsCalendar } from "~/lib/calendar";
 
 // Esto se llama aquí para que se tenga metadatos del calendario en el build
@@ -81,7 +88,7 @@ const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GO
 	<div class="px-4 py-8">
 		<LandingEvents client:load initialCalendarData={initialCalendarData} />
 		<ArrowLink
-			action="Ver dccalendario de eventos completo"
+			action="Ver dccalendario de eventos comple to"
 			href="/eventos"
 			class="mx-auto mt-8 w-fit stroke-gray-700 py-2 text-gray-700"
 		/>
@@ -89,9 +96,9 @@ const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GO
 	<div class="bg-gray-100 px-4 py-8">
 		<h2 class="py-8 text-center font-title text-xl">Otros links</h2>
 		<div class="flex flex-wrap items-center justify-center gap-4">
-			<LinkCard href="/ayudantias" img="/imgs/merch.webp" name="Ayudantías" />
-			<LinkCard href="/merch" img="/imgs/merch.webp" name="Merch" />
-			<LinkCard href="/fotos" img="/imgs/merch.webp" name="Fotos" />
+			<LinkCard href="/ayudantias" src={ayudanteImg} name="Ayudantías" />
+			<LinkCard href="https://dcc.ing.puc.cl" src={dccImg} name="DCC" />
+			<LinkCard href="https://cienciadelacomputacion.uc.cl" src={LicDCImg} name="Licenciatura de Computación" />
 		</div>
 	</div>
 </BaseLayout>
