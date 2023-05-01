@@ -15,7 +15,7 @@ const Img = isSVG ? "img" : Image;
 const src = isSVG ? rawSrc.src : rawSrc;
 ---
 
-<a class={classNames("card w-[160px] min-h-[210px] hover:shadow-xl hover:underline", className)} href={href}>
+<a class={classNames("card", className)} href={href}>
 	<div>
 		<Img
 			class={classNames("h-24 w-24 rounded", isSVG ? "" : "object-cover")}
@@ -33,6 +33,6 @@ const src = isSVG ? rawSrc.src : rawSrc;
 
 <style lang="scss">
 	.card {
-		@apply flex flex-col items-center rounded border-4 border-black bg-white p-4 font-bold transition-shadow;
+		@apply flex min-h-[210px] w-[150px] flex-col items-center rounded border-4 border-black bg-white px-2 py-4 font-bold transition-shadow hover:underline hover:shadow-xl;
 	}
 </style>
