@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+
+import cccImg from "~/assets/ccc-2022.jpg";
+
+import BaseLayout from "~/layouts/Base.astro";
+import CCC from "./CCC.svelte";
+import Delegados from "./Delegados.svelte";
+---
+
+<BaseLayout class="bg-stone-200 px-2 py-6">
+	<div id="repr-grid" class="mx-auto mb-4 grid max-w-5xl grid-flow-row gap-4">
+		<div id="img-card" class="overflow-clip rounded">
+			<Image
+				src={cccImg}
+				class="h-full w-full object-cover"
+				alt="Circulo de personas atentos a la directiva del capítulo"
+			/>
+		</div>
+		<div id="ccc-card" class="rounded bg-stone-100 px-6 pb-6 pt-8 text-justify">
+			<h2 class="mb-2 font-title text-2xl">Capítulo</h2>
+			<div class="prose prose-stone leading-snug">
+				<p>
+					Nosotros somos el Capítulo de Ciencia de la Computación, un equipo de estudiantes que busca representar e
+					impulsar a la comunidad dentro del Departamento de Ciencia de la Computación en la Pontificia Universidad
+					Católica de Chile.
+				</p>
+				<p>
+					Organizamos eventos y proyectos principalmente dirigidos a alumnos que estudien en el DCC, tanto por Major,
+					Minor, o por la licenciatura de computación, llegando a cientos de estudiantes de Ingeniería UC.
+				</p>
+				<!-- <p>
+					Las actividades que organizamos abarcan diferentes áreas, como comunitarias, sobre investigación y sobre el
+					mercado labora. Para esto, colaboramos con diferentes empresas, grupos de investigación y otros grupos de
+					estudiantes.
+				</p> -->
+				<p>
+					Puedes unirte al capítulo en <a href="https://forms.gle/oZMNREocWonkszAr8">este formulario</a>, o puedes
+					contactarnos con <a href="mailto:helloworld@ing.puc.cl">helloworld@ing.puc.cl</a>.
+				</p>
+			</div>
+			<h2 class="mb-2 mt-6 font-title text-xl">Directiva</h2>
+			<CCC client:idle />
+		</div>
+		<div id="del-card" class="rounded bg-stone-100 px-4 py-8">
+			<h2 class="mb-2 font-title text-2xl">Delegados</h2>
+			<p>
+				Los delegados son los que representan a los estudiantes en el Consejo Academico del Centro de Alumnos de
+				ingeniería (CAi).
+			</p>
+			<Delegados client:idle />
+		</div>
+	</div>
+
+	<style lang="scss">
+		@screen md {
+			#repr-grid {
+				grid-template-areas: "img ccc" "del ccc";
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr auto;
+			}
+			#ccc-card {
+				grid-area: ccc;
+			}
+			#del-card {
+				grid-area: del;
+			}
+			#img-card {
+				grid-area: img;
+			}
+		}
+	</style>
+</BaseLayout>

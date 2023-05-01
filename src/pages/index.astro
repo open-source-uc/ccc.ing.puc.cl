@@ -1,13 +1,20 @@
 ---
 import BaseLayout from "~/layouts/Base.astro";
+
 import LandingCard from "~/components/LandingCard.astro";
 import ArrowLink from "~/components/ArrowLink.svelte";
 import LinkCard from "~/components/LinkCard.astro";
 import LandingEvents from "~/components/LandingEvents.svelte";
-import telegramIcon from "~/icons/telegram.svg";
-import linkedinIcon from "~/icons/linkedin.svg";
-import facebookIcon from "~/icons/facebook.svg";
-import instagramIcon from "~/icons/instagram.svg";
+
+import telegramIcon from "~/assets/icons/telegram.svg";
+import linkedinIcon from "~/assets/icons/linkedin.svg";
+import facebookIcon from "~/assets/icons/facebook.svg";
+import instagramIcon from "~/assets/icons/instagram.svg";
+
+import ayudanteImg from "~/assets/link-imgs/ayudante.jpg";
+import dccImg from "~/assets/link-imgs/dcc.svg";
+import LicDCImg from "~/assets/link-imgs/licdc.png";
+
 import { getNextEventsCalendar } from "~/lib/calendar";
 
 // Esto se llama aquí para que se tenga metadatos del calendario en el build
@@ -60,16 +67,16 @@ const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GO
 				<!-- Redes sociales -->
 				<div class="flex gap-1">
 					<a href="https://t.me/joinchat/EjPdwkIoyQB3037UcnTyhA" class="p-1">
-						<img class="h-6 w-6" src={telegramIcon} alt="Telegr am icon" />
+						<img class="h-6 w-6" src={telegramIcon.src} alt="Telegr am icon" />
 					</a>
 					<a href="https://www.linkedin.com/company/dcc-ccc/" class="p-1">
-						<img class="h-6 w-6" src={linkedinIcon} alt="LinkedIn icon" />
+						<img class="h-6 w-6" src={linkedinIcon.src} alt="LinkedIn icon" />
 					</a>
 					<a href="https://www.facebook.com/acm.puc/" class="p-1">
-						<img class="h-6 w-6" src={facebookIcon} alt="Facebook icon" />
+						<img class="h-6 w-6" src={facebookIcon.src} alt="Facebook icon" />
 					</a>
 					<a href="https://www.instagram.com/ccc.ing.uc" class="p-1">
-						<img class="h-6 w-6" src={instagramIcon} alt="Instagram icon" />
+						<img class="h-6 w-6" src={instagramIcon.src} alt="Instagram icon" />
 					</a>
 				</div>
 				<!-- Separador -->
@@ -78,20 +85,20 @@ const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GO
 			</div>
 		</div>
 	</div>
-	<div class="py-8 px-4">
+	<div class="px-4 py-8">
 		<LandingEvents client:load initialCalendarData={initialCalendarData} />
 		<ArrowLink
-			action="Ver dccalendario de eventos completo"
+			action="Ver dccalendario de eventos comple to"
 			href="/eventos"
-			class="stroke-gray-700 text-gray-700 w-fit mx-auto mt-8 py-2"
+			class="mx-auto mt-8 w-fit stroke-gray-700 py-2 text-gray-700"
 		/>
 	</div>
 	<div class="bg-gray-100 px-4 py-8">
 		<h2 class="py-8 text-center font-title text-xl">Otros links</h2>
 		<div class="flex flex-wrap items-center justify-center gap-4">
-			<LinkCard href="/ayudantias" img="/imgs/merch.webp" name="Ayudantías" />
-			<LinkCard href="/merch" img="/imgs/merch.webp" name="Merch" />
-			<LinkCard href="/fotos" img="/imgs/merch.webp" name="Fotos" />
+			<LinkCard href="/ayudantias" src={ayudanteImg} name="Ayudantías" />
+			<LinkCard href="https://dcc.ing.puc.cl" src={dccImg} name="DCC" />
+			<LinkCard href="https://cienciadelacomputacion.uc.cl" src={LicDCImg} name="Licenciatura de Computación" />
 		</div>
 	</div>
 </BaseLayout>

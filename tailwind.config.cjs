@@ -23,5 +23,5 @@ module.exports = {
 			title: ["Oxanium", "sans-serif"],
 		},
 	},
-	plugins: [require("@tailwindcss/line-clamp"), require("@tailwindcss/typography")],
+	plugins: [require("@tailwindcss/typography")],
 };

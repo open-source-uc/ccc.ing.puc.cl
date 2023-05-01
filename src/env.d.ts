@@ -1,3 +1,6 @@
+/// <reference path="../.astro/types.d.ts" />
+/// <reference types="astro/client-image" />
+
 interface ImportMetaEnv {
 	readonly PUBLIC_GOOGLE_API_KEY: string;
 	readonly PUBLIC_GOOGLE_CALENDAR_ID: string;

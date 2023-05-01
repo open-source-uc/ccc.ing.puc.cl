@@ -28,11 +28,10 @@
 		<a class="nav-item" href="/grupos">Grupos</a>
 		<a class="nav-item" href="/ayudantias">Ayudantías</a>
 		<a class="nav-item" href="/guias">Guias</a>
-		<a class="nav-item" href="/merch">Merch</a>
 	</div>
 </nav>
 
-<style>
+<style lang="postcss">
 	nav {
 		@apply sticky top-0 z-30 flex w-full flex-wrap items-center justify-between gap-8 bg-white p-4 shadow-md md:flex-nowrap md:justify-center;
 	}
