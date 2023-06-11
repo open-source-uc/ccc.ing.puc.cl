@@ -11,7 +11,6 @@
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "^6.4.0",
 		"@astrojs/svelte": "^2.1.0",
 		"@astrojs/tailwind": "^3.1.1",
 		"@tailwindcss/typography": "^0.5.8",
@@ -26,6 +25,7 @@
 		"remark-gfm": "^3.0.1",
 		"remark-html": "^15.0.1",
 		"sass": "^1.62.1",
+		"sharp": "^0.32.1",
 		"svelte": "^3.49.0",
 		"tailwind": "^3.1.0",
 		"tailwindcss": "^3.3.2",
