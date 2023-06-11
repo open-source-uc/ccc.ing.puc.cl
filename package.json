@@ -3,9 +3,11 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"astro": "astro",
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
+		"build:cloudflare": "CLOUDFLARE=1 astro build",
 		"preview": "astro preview"
 	},
 	"dependencies": {
@@ -13,7 +15,7 @@
 		"@astrojs/tailwind": "^3.1.1",
 		"@tailwindcss/typography": "^0.5.8",
 		"@types/js-yaml": "^4.0.5",
-		"astro": "^2.3.2",
+		"astro": "^2.6.3",
 		"autoprefixer": "^10.4.14",
 		"js-yaml": "^4.1.0",
 		"nanostores": "^0.7.1",
@@ -23,6 +25,7 @@
 		"remark-gfm": "^3.0.1",
 		"remark-html": "^15.0.1",
 		"sass": "^1.62.1",
+		"sharp": "^0.32.1",
 		"svelte": "^3.49.0",
 		"tailwind": "^3.1.0",
 		"tailwindcss": "^3.3.2",

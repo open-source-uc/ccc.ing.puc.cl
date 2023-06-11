@@ -1,11 +1,15 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), svelte()],
 	experimental: {
 		assets: true,
 	},
+	image: {
+		service: sharpImageService(),
+	},
+	integrations: [tailwind(), svelte()],
+	output: "static",
 });

@@ -26,8 +26,8 @@
 		<a class="nav-item" href="/cursos">Cursos</a>
 		<a class="nav-item" href="/representantes">Representantes</a>
 		<a class="nav-item" href="/grupos">Grupos</a>
-		<a class="nav-item" href="/ayudantias">Ayudantías</a>
-		<a class="nav-item" href="/guias">Guias</a>
+		<a class="nav-item" href="/iniciativas">Iniciativas</a>
+		<a class="nav-item" href="/guias">Guías</a>
 	</div>
 </nav>
 

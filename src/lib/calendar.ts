@@ -7,10 +7,19 @@ export async function getNextEventsCalendar(key: string = googleAPIKey) {
 	const response = await fetch(url);
 	const data = (await response.json()) as GoogleCalendarResponse;
 
-	data.items.sort((a, b) => {
-		const aDate = new Date(a.start.dateTime || a.start.date);
-		const bDate = new Date(b.start.dateTime || b.start.date);
-		return aDate.getTime() - bDate.getTime();
-	});
-	return data;
+	try {
+		const items = data.items
+			.filter((d) => d.status === "confirmed")
+			.sort((a, b) => {
+				const aDate = new Date(a.start.dateTime || a.start.date);
+				const bDate = new Date(b.start.dateTime || b.start.date);
+				return aDate.getTime() - bDate.getTime();
+			});
+
+		return { ...data, items };
+	} catch (error) {
+		console.error(error);
+		console.error(data);
+		throw new Error("Error fetching calendar");
+	}
 }

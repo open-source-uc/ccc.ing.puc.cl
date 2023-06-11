@@ -46,4 +46,5 @@ interface GoogleCalendarEvent {
 	kind: "calendar#event";
 	location?: string | null;
 	start: GoogleEventDateTime;
+	status: "confirmed" | "tentative" | "cancelled";
 }
