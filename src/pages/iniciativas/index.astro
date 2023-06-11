@@ -1,0 +1,83 @@
+---
+import BaseLayout from "~/layouts/Base.astro";
+import Initiative from "~/components/Initiative.astro";
+
+import cpuLogo from "~/assets/initiatives/cpu.jpg";
+import osucLogo from "~/assets/initiatives/osuc.png";
+import succLogo from "~/assets/initiatives/succ.png";
+import iaclubLogo from "~/assets/initiatives/iaclub.png";
+import agisfLogo from "~/assets/initiatives/agisf.jpg";
+---
+
+<BaseLayout title="Iniciativas">
+	<div class="mx-auto w-full max-w-4xl px-4 py-8">
+		<h2 class="font-title text-xl">Iniciativas relacionadas al DCC</h2>
+		<p>
+			Iniciativas y glubes relacionados al DCC.
+			<a href="/grupos" class="underline">Los grupos generales están en este link</a>.
+		</p>
+	</div>
+	<div class="flex-grow bg-stone-200 shadow-inner">
+		<ul id="initiatives" class="max-w-5xl px-4 py-6 mx-auto">
+			<Initiative
+				name="CPU"
+				logoSrc={cpuLogo}
+				social={[{ name: "instagram", url: "https://www.instagram.com/cpu_uc/" }]}
+			>
+				Proyecto de ayuda social enfocado en la disminución de la brecha tecnológica mediante la donación de
+				computadores reacondicionados
+			</Initiative>
+			<Initiative
+				name="Open Source UC"
+				logoSrc={osucLogo}
+				social={[
+					{ name: "telegram", url: "https://t.me/+zQdotSmFEIRkMzcx" },
+					{ name: "github", url: "https://github.com/open-source-uc" },
+					{ name: "linkedin", url: "https://www.linkedin.com/company/open-source-uc" },
+					{ name: "web", url: "https://osuc.dev" },
+					{ name: "instagram", url: "https://www.instagram.com/opensource_euc" },
+				]}
+			>
+				Comunidad apasionada por crear e impulsar proyectos bacanes de código abierto
+			</Initiative>
+			<Initiative
+				name="Security UC Club"
+				social={[
+					{ name: "web", url: "https://security.ing.puc.cl/" },
+					{ name: "instagram", url: "https://www.instagram.com/securityucclub" },
+				]}
+				logoSrc={succLogo}
+			>
+				Club enfocado en fomentar la participación en la investigación de seguridad, privacidad y cifrado
+			</Initiative>
+			<Initiative
+				name="IA Club"
+				logoSrc={iaclubLogo}
+				social={[{ name: "github", url: "https://github.com/aiclub-uc" }]}
+			>
+				Comunidad apasionada por la IA, que busca impulsar carreras de las personas que buscan trabajar o ya trabajan en
+				IA
+			</Initiative>
+			<Initiative
+				name="IA Safety Initiative"
+				logoSrc={agisfLogo}
+				social={[
+					{ name: "linkedin", url: "https://www.linkedin.com/company/ai-safety-initiative-chile/" },
+					{ name: "web", url: "https://agisf.aisuc.dev" },
+					{ name: "instagram", url: "https://www.instagram.com/aisafety_uc" },
+				]}
+			>
+				Grupo estudiantil enfocado en reducir los riesgos de modelos avanzados de IA
+			</Initiative>
+		</ul>
+	</div>
+</BaseLayout>
+
+<style>
+	ul {
+		display: grid;
+		gap: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-auto-rows: 1fr;
+	}
+</style>

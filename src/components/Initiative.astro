@@ -1,0 +1,64 @@
+---
+import { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+
+import Instagram from "~/components/svgs/icons/instagram.astro";
+import LinkedIn from "~/components/svgs/icons/linkedin.astro";
+import Web from "~/components/svgs/icons/web.astro";
+import Telegram from "~/components/svgs/icons/telegram.astro";
+import GitHub from "./svgs/icons/github.astro";
+
+export interface Props {
+	name: string;
+	logoSrc: ImageMetadata;
+	social?: { name: "instagram" | "web" | "linkedin" | "telegram" | "github"; url: string }[];
+}
+
+const { name, logoSrc, social } = Astro.props;
+
+const socialIcons = {
+	instagram: Instagram,
+	linkedin: LinkedIn,
+	web: Web,
+	telegram: Telegram,
+	github: GitHub,
+} as const;
+
+const mappedSocial = social?.map(({ name, url }) => ({
+	name,
+	url,
+	Icon: socialIcons[name],
+}));
+---
+
+<li class="max-w-xl mx-auto w-full">
+	<article class="flex gap-4 bg-stone-100 p-4 rounded-xl items-center h-full">
+		<Image
+			src={logoSrc}
+			alt=""
+			width={256}
+			height={256}
+			class="object-cover h-32 w-32 rounded-lg border-2 border-stone-700"
+		/>
+		<div class="flex flex-col h-full w-full">
+			<div class="flex-grow">
+				<h1 class="font-title text-xl sm:text-2xl mt-2">{name}</h1>
+				<div class="leading-tight">
+					<slot />
+				</div>
+			</div>
+			{
+				mappedSocial ? (
+					<ul class="flex justify-end mt-1 gap-2">
+						{mappedSocial.map(({ name, url, Icon }) => (
+							<a href={url}>
+								<Icon class="w-8 h-8 text-stone-800" />
+								<span class="sr-only">{name}</span>
+							</a>
+						))}
+					</ul>
+				) : null
+			}
+		</div>
+	</article>
+</li>
