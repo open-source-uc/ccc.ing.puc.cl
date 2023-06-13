@@ -14,7 +14,7 @@ import agisfLogo from "~/assets/initiatives/agisf.jpg";
 	bannerImage="/og/specific/iniciativas.png"
 	description="Iniciativas y clubes relacionados al DCC"
 >
-	<div class="mx-auto w-full max-w-4xl px-4 py-8">
+	<div class="mx-auto w-full max-w-4xl px-4 py-6">
 		<h2 class="font-title text-xl">Iniciativas relacionadas al DCC</h2>
 		<p>
 			Iniciativas y clubes relacionados al DCC.
@@ -22,7 +22,7 @@ import agisfLogo from "~/assets/initiatives/agisf.jpg";
 		</p>
 	</div>
 	<div class="flex-grow bg-stone-200 shadow-inner">
-		<ul id="initiatives" class="max-w-5xl px-4 py-6 mx-auto">
+		<ul id="initiatives" class="max-w-6xl px-4 py-4 gap-4 mx-auto">
 			<Initiative
 				name="CPU"
 				logoSrc={cpuLogo}
@@ -80,9 +80,14 @@ import agisfLogo from "~/assets/initiatives/agisf.jpg";
 
 <style>
 	ul {
-		display: grid;
-		gap: 15px;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		grid-auto-rows: 1fr;
+		display: flex;
+		flex-direction: column;
+	}
+	@media screen(md) {
+		ul {
+			display: grid;
+			grid-auto-rows: 1fr;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+		}
 	}
 </style>

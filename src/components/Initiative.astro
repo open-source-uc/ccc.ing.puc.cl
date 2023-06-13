@@ -32,27 +32,27 @@ const mappedSocial = social?.map(({ name, url }) => ({
 ---
 
 <li class="max-w-xl mx-auto w-full">
-	<article class="flex gap-4 bg-stone-100 p-4 rounded-xl items-center h-full">
+	<article class="flex gap-2 xs:gap-4 bg-stone-100 p-3 xs:p-4 rounded-xl h-full">
 		<Image
 			src={logoSrc}
 			alt=""
 			width={256}
 			height={256}
-			class="object-cover h-32 w-32 rounded-lg border-2 border-stone-700"
+			class="object-cover h-16 w-16 xs:h-24 xs:w-24 sm:h-32 sm:w-32 rounded-lg border-2 border-stone-700"
 		/>
-		<div class="flex flex-col h-full w-full">
+		<div class="flex flex-col w-full flex-grow md:h-full">
 			<div class="flex-grow">
-				<h1 class="font-title text-xl sm:text-2xl mt-2">{name}</h1>
+				<h1 class="font-title text-xl sm:text-2xl">{name}</h1>
 				<div class="leading-tight">
 					<slot />
 				</div>
 			</div>
 			{
 				mappedSocial ? (
-					<ul class="flex justify-end mt-1 gap-2">
+					<ul class="flex flex-wrap justify-end mt-2 gap-2">
 						{mappedSocial.map(({ name, url, Icon }) => (
 							<a href={url}>
-								<Icon class="w-8 h-8 text-stone-800" />
+								<Icon class="w-7 h-7 xs:w-8 xs:h-8 text-stone-800" />
 								<span class="sr-only">{name}</span>
 							</a>
 						))}
