@@ -9,16 +9,20 @@ import iaclubLogo from "~/assets/initiatives/iaclub.png";
 import agisfLogo from "~/assets/initiatives/agisf.jpg";
 ---
 
-<BaseLayout title="Iniciativas">
-	<div class="mx-auto w-full max-w-4xl px-4 py-8">
+<BaseLayout
+	title="Iniciativas"
+	bannerImage="/og/specific/iniciativas.png"
+	description="Iniciativas y clubes relacionados al DCC"
+>
+	<div class="mx-auto w-full max-w-4xl px-4 py-6">
 		<h2 class="font-title text-xl">Iniciativas relacionadas al DCC</h2>
 		<p>
-			Iniciativas y glubes relacionados al DCC.
+			Iniciativas y clubes relacionados al DCC.
 			<a href="/grupos" class="underline">Los grupos generales están en este link</a>.
 		</p>
 	</div>
 	<div class="flex-grow bg-stone-200 shadow-inner">
-		<ul id="initiatives" class="max-w-5xl px-4 py-6 mx-auto">
+		<ul id="initiatives" class="max-w-6xl px-4 py-4 gap-4 mx-auto">
 			<Initiative
 				name="CPU"
 				logoSrc={cpuLogo}
@@ -62,6 +66,7 @@ import agisfLogo from "~/assets/initiatives/agisf.jpg";
 				name="IA Safety Initiative"
 				logoSrc={agisfLogo}
 				social={[
+					{ name: "telegram", url: "https://t.me/+9i4aoYBdACc4ZmYx" },
 					{ name: "linkedin", url: "https://www.linkedin.com/company/ai-safety-initiative-chile/" },
 					{ name: "web", url: "https://agisf.aisuc.dev" },
 					{ name: "instagram", url: "https://www.instagram.com/aisafety_uc" },
@@ -75,9 +80,14 @@ import agisfLogo from "~/assets/initiatives/agisf.jpg";
 
 <style>
 	ul {
-		display: grid;
-		gap: 15px;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		grid-auto-rows: 1fr;
+		display: flex;
+		flex-direction: column;
+	}
+	@media screen(md) {
+		ul {
+			display: grid;
+			grid-auto-rows: 1fr;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+		}
 	}
 </style>
