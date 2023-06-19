@@ -6,6 +6,8 @@ interface ImportMetaEnv {
 	readonly PUBLIC_GOOGLE_CALENDAR_ID: string;
 	readonly BUILD_GOOGLE_API_KEY: string;
 	readonly PUBLIC_PB_URL: string;
+	readonly NOTION_SECRET: string;
+	readonly NOTION_GRUPOS_DE_INVESTIGACION: string;
 }
 
 interface ImportMeta {
