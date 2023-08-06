@@ -59,23 +59,23 @@
   codes:
     - IIC2223
   links:
-    telegram: https://t.me/joinchat/CogUgBTfxRlZRxWOwze7Sw
+    telegram: https://t.me/+d9CuLzUS5H8yY2Nh
 - name: Diseño y Análisis de Algoritmos
   codes:
     - IIC2283
   links:
-    telegram: https://t.me/joinchat/GjG-PRbCNy2kUnfwbiRVgg
+    telegram: https://t.me/+wPrwjYhodQs4OTVh
 - name: Sistemas operativos y redes
   abbr: SSOO
   codes:
     - IIC2333
   links:
-    telegram: https://t.me/joinchat/GjG-PRPFPZOVG2MNQus0-Q
+    telegram: https://t.me/+7-t5JMkquj9iYjQ5
 - name: Arquitectura de Computadores
   codes:
     - IIC2343
   links:
-    telegram: https://t.me/joinchat/KOKrZhT8EVZK5CNmxWZfTg
+    telegram: https://t.me/+BI9xPCRc2GFkZDQx
 - name: Bases de Datos
   codes:
     - IIC2413
@@ -96,7 +96,7 @@
   codes:
     - IIC2523
   links:
-    telegram: https://t.me/joinchat/Hmv11BdJJI1_aPuoF_FSow
+    telegram: https://t.me/+kyZkS1__ep8xNzJh
 - name: Taller de Programación Competitiva II
   codes:
     - IIC2553
@@ -152,6 +152,11 @@
     - IIC3253
   links:
     telegram: https://t.me/joinchat/GjG-PRsRo9s53PTsTh6NOg
+- name: Criptomonedas y Contratos Inteligentes
+  codes:
+    - IIC3272
+  links:
+    telegram: https://t.me/+howInis70uw0NDlh
 - name: Implementación de Sistemas de Base de Datos
   codes:
     - IIC3413
