@@ -255,6 +255,11 @@
     - IIC3242
   links:
     telegram: https://t.me/+-n8q6qdd86o5ZDQx
+- name: Teoría de Modelos Finitos
+  codes:
+    - IIC3263
+  links:
+    telegram: https://t.me/+urIJaB5U3Io3ZTJh
 - name: Algoritmos y Aleatoriedad
   codes:
     - IIC3284
