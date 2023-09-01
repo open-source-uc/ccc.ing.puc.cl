@@ -1,0 +1,15 @@
+---
+import BaseLayout, { Props as BaseLayoutProps } from "~/layouts/Base.astro";
+
+export type Props = BaseLayoutProps;
+---
+
+<BaseLayout {...Astro.props} class="bg-stone-200">
+	<div class="px-2 py-4">
+		<div
+			class="max-w-2xl px-4 py-6 bg-stone-50 rounded mx-auto w-full prose prose-h1:text-4xl prose-h1:text-center prose-headings:[text-wrap:balance]"
+		>
+			<slot />
+		</div>
+	</div>
+</BaseLayout>
