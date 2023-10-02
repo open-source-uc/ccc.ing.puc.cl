@@ -1,8 +1,44 @@
 (base) {
 	@static {
-		path_regexp static \.([a-f0-9]{6})\.([a-f0-9]{1,5})$
+		file
+		path *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.woff *.webp *.ttf
 	}
+
+	@generated {
+		file
+		path /_astro/*
+	}
+
 	encode gzip
-	header @static Cache-Control "public, max-age=604800, must-revalidate"
-	file_server
+	header @static    Cache-Control max-age=1314000
+	header @generated Cache-Control max-age=31536000
+
+	handle_errors {
+		@404 expression `{err.status_code} == 404 && {method} == "GET"`
+		handle @404 {
+			rewrite * /404.html
+		}
+	}
+}
+
+ccc.ing.puc.cl {
+	import base
+
+	handle_path /pb* {
+		reverse_proxy 127.0.0.1:8090
+	}
+
+	handle {
+		root * /var/www/html/web-ccc/
+		file_server
+	}
+}
+
+security.ing.puc.cl {
+	import base
+
+	handle {
+		root * /var/www/html/web-succ/
+		file_server
+	}
 }

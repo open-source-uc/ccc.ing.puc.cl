@@ -14,3 +14,4 @@ pnpm-debug.log*
 /pb*
 *.generated.?*.ts
 .astro
+/backup
