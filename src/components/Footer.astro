@@ -3,19 +3,22 @@ import CCCLogo from "~/components/svgs/ccc.astro";
 ---
 
 <footer class="bg-black flex flex-col md:flex-row justify-between items-center px-2 md:px-8 py-6 gap-4">
-    <div class="text-center md:text-left text-stone-400">
-        <div class="font-bold">
-            Contacto:
-            <a class="hover:text-stone-200 transition-all" href="mailto:helloworld@ing.puc.cl">helloworld@ing.puc.cl</a>
-        </div >
-        <a class="hover:text-stone-200 block transition-all font-bold" href="https://github.com/open-source-uc/web-ccc/">
-            Código disponible en GitHub
-        </a>
-        <div  class="font-bold text-sm" >
-            ©{(new Date()).getFullYear()} Capítulo de Ciencia de la Computación UC
-        </div>
-    </div>
-    <a href="#top" title="go to top" class="block">
-        <CCCLogo class="fill-stone-400 hover:fill-stone-200 transition-colors" />
-    </a>
+	<div class="text-center md:text-left text-stone-400">
+		<div class="font-bold">
+			Contacto:
+			<a class="hover:text-stone-200 transition-all" href="mailto:helloworld@ing.puc.cl">helloworld@ing.puc.cl</a>
+		</div>
+		<a
+			class="hover:text-stone-200 block transition-all font-bold"
+			href="https://github.com/open-source-uc/ccc.ing.puc.cl/"
+		>
+			Código disponible en GitHub
+		</a>
+		<div class="font-bold text-sm">
+			©{new Date().getFullYear()} Capítulo de Ciencia de la Computación UC
+		</div>
+	</div>
+	<a href="#top" title="go to top" class="block">
+		<CCCLogo class="fill-stone-400 hover:fill-stone-200 transition-colors" />
+	</a>
 </footer>
