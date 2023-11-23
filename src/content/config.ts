@@ -5,7 +5,7 @@ export const collections = {
 		schema: z.object({
 			title: z.string(),
 			author: z.string(),
-			type: z.enum(["academic"]),
+			type: z.enum(["academic", "staff"]),
 		}),
 	}),
 };
