@@ -15,7 +15,7 @@ Como miembro del Capítulo de Ciencia de la Computación de la Pontificia Univer
 ## Código de Conducta convenido para Contribuyentes 2.0
 
 ### Nuestro compromiso
-Nosotros, como miembros, nos comprometemos a hacer de la participación en nuestra comunidad una experiencia libre de acoso para todas las personas, independientemente de su edad, dimensión corporal, minusvalía visible o invisible, etnicidad, características sexuales, identidad y expresión de género, nivel de experiencia, educación, nivel socio-económico, nacionalidad, apariencia personal, raza, religión, o identidad u orientación sexual.
+Nosotros, como miembros, nos comprometemos a hacer de la participación en nuestra comunidad una experiencia libre de acoso para todas las personas, independientemente de su edad, dimensión corporal, minusvalía visible o invisible, etnicidad, características sexuales, identidad y expresión de género, nivel de experiencia, educación, nivel socio-económico, nacionalidad, apariencia personal, raza, religión, identidad u orientación sexual.
 Nos comprometemos a actuar e interactuar de maneras que contribuyan a una comunidad abierta, acogedora, diversa, inclusiva y sana.
 
 ### Nuestros estándares

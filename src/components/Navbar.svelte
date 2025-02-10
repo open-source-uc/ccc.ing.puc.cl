@@ -36,7 +36,7 @@
 		@apply sticky top-0 z-30 flex w-full flex-wrap items-center justify-between gap-8 bg-white p-4 shadow-md md:flex-nowrap md:justify-center;
 	}
 	.nav-item {
-		@apply px-1 py-2 text-center font-bold text-gray-600 decoration-purple-800 hover:underline;
+		@apply px-1 py-2 text-center font-bold text-gray-600 decoration-purple-800 hover:text-purple-800;
 	}
 	nav.open #nav-content {
 		@apply flex items-stretch;
