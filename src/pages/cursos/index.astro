@@ -1,0 +1,14 @@
+---
+import BaseLayout from "~/layouts/Base.astro";
+import Cursos from "./Cursos.svelte";
+---
+
+<BaseLayout bannerImage="/og/specific/cursos.png">
+	<div class="mx-auto w-full max-w-4xl px-4 py-6">
+		<h2 class="font-title text-xl">Cursos</h2>
+			Listado de cursos importantes para la carrera
+	</div>
+	<div class="flex-grow bg-stone-200 shadow-inner">
+		<Cursos client:idle />
+	</div>
+</BaseLayout>
