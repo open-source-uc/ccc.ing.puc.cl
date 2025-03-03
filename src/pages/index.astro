@@ -18,7 +18,7 @@ import LicDCImg from "~/assets/link-imgs/licdc.png";
 import { getNextEventsCalendar } from "~/lib/calendar";
 
 // Esto se llama aquí para que se tenga metadatos del calendario en el build
-const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GOOGLE_API_KEY);
+//const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GOOGLE_API_KEY);
 ---
 
 <BaseLayout>
@@ -85,15 +85,15 @@ const initialCalendarData = await getNextEventsCalendar(import.meta.env.BUILD_GO
 			</div>
 		</div>
 	</div>
-	<div class="px-4 py-8">
+	<!-- <div class="px-4 py-8">
 		<LandingEvents client:load initialCalendarData={initialCalendarData} />
 		<ArrowLink
 			action="Ver dccalendario de eventos completo"
 			href="/eventos"
 			class="mx-auto mt-8 w-fit stroke-gray-700 py-2 text-gray-700"
 		/>
-	</div>
-	<div class="bg-gray-100 px-4 py-8">
+	</div>-->
+	<div class="px-4 py-8">
 		<h2 class="py-8 text-center font-title text-xl">Otros links</h2>
 		<div class="flex flex-wrap items-center justify-center gap-4">
 			<LinkCard href="/ayudantias" src={ayudanteImg} name="Ayudantías" />
