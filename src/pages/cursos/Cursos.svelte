@@ -33,8 +33,8 @@
 {:then courses}
 	<ul class="course-grid mx-auto grid max-w-4xl p-4">
 		{#each courses as course}
-			{@const { abbr, code, name, links } = course}
-			<li class="flex flex-col rounded bg-white py-4 px-2">
+			{@const { abbr, code, name, invitation_url } = course}
+			<li class="flex flex-col rounded bg-white py-3 px-2">
 				<div class="flex-grow">
 					<span>
 						{#if abbr}
@@ -44,17 +44,7 @@
 					<span>{name}</span>
 					({code})
 				</div>
-				{#if links > 0}
-					<ul>
-						{#each Object.entries(links) as [linkName, href]}
-							<li>
-								<a {href} class="p-1 text-blue-500 hover:underline">
-									{linkName}
-								</a>
-							</li>
-						{/each}
-					</ul>
-				{/if}
+				<a href={invitation_url} class="text-blue-500 hover:underline p-1"> Telegram </a>
 			</li>
 		{/each}
 	</ul>
