@@ -36,15 +36,14 @@
 			{@const { abbr, code, name, invitation_url } = course}
 			<li class="flex flex-col rounded bg-white py-3 px-2">
 				<div class="flex-grow">
-					<span>
-						{#if abbr}
-							{abbr} - {" "}
-						{/if}
-					</span>
-					<span>{name}</span>
-					({code})
+					{#if abbr}
+						{abbr} - {" "}
+					{/if}
+					{name} ({code})
 				</div>
-				<a href={invitation_url} class="text-blue-500 hover:underline p-1"> Telegram </a>
+				{#if invitation_url}
+					<a href={invitation_url} class="text-blue-500 hover:underline p-1"> Telegram </a>
+				{/if}
 			</li>
 		{/each}
 	</ul>
