@@ -5,7 +5,7 @@ layout: "~/layouts/Document.astro"
 Si eres víctima o presenciaste un incidente dentro de
 nuestra comunidad, puedes denunciar y conseguir apoyo
 contactando a los <a href="/representantes">representantes</a>
-por Telegram o por correo por helloworld@ing.puc.cl
+por Telegram o por correo por capitulo_dcc@uc.cl
 
 # El Código de Conducta convenido para Contribuyentes 2.0 gobierna al Capítulo de Ciencia de la Computación de la Pontificia Universidad Católica de Chile
 Como miembro del Capítulo de Ciencia de la Computación de la Pontificia Universidad Católica de Chile (CCC-UC) velarás por hacer de nuestra comunidad inclusiva y accesible para todo mundo. Para asegurar que todo miembro de nuestra comunidad se sienta segur@, cómod@ y bienvenid@, nuestra comunidad se basa en el Código de Conducta convenido para Contribuyentes 2.0 (https://www.contributor-covenant.org/es/version/2/0/code_of_conduct/). A continuación se encuentra el Código de Conducta.
