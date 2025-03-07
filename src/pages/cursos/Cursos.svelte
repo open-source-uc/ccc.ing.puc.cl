@@ -13,8 +13,9 @@
 	async function getCourses() {
 		_finally = false;
 		try {
-			const res = await pb.collection("courses").getFullList<Course>();
+			const res: Course[] = await pb.collection("courses").getFullList<Course>();
 			if (res) {
+				res.sort((a, b) => a.code.localeCompare(b.code));
 				return res;
 			} else {
 				console.log(res);
