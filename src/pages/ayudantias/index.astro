@@ -1,5 +1,6 @@
 ---
 import CardsLayout from "~/layouts/Cards.astro";
+import Ayudantias from "./Ayudantias.svelte";
 ---
 
 <CardsLayout class="flex-col flex" title="Ayudantías">
@@ -9,24 +10,10 @@ import CardsLayout from "~/layouts/Cards.astro";
 			Recuerda que todas las postulaciones se realizan vía SIDING. <br class="hidden md:block" />
 			Para más información sobre periodos, cursos y requisitos, únete a
 			<!-- in another tab -->
-			<a class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer" href="https://t.me/DCC_UC"
+			<a class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer" href="https://t.me/joinchat/lNV5FuTvkddjMzU5"
 				>DCCAcademic</a
 			>!
 		</p>
 	</Fragment>
-	<section class="flex flex-col gap-6 mx-auto max-w-xl p-4">
-		<articule class="flex flex-col rounded bg-white py-6 px-4">
-			<h2 class="font-bold text-xl text-stone-900 px-2">Introducción a la programación</h2>
-			<div class="flex flex-col gap-1 pt-4">
-				<a
-					href="https://iic1103.ing.puc.cl/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="text-stone-800 hover:bg-stone-50 border-stone-800 border-2 font-bold py-0.5 px-4 text-center rounded"
-				>
-					Ir al sitio
-				</a>
-			</div>
-		</articule>
-	</section>
+	<Ayudantias client:only />
 </CardsLayout>
