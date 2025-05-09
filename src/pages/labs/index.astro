@@ -1,16 +1,6 @@
 ---
 import BaseLayout from "~/layouts/Base.astro";
-
-import { Client } from "@notionhq/client";
-import GrupoInvestigacion from "~/components/GrupoInvestigacion.astro";
-
-const client = new Client({
-	auth: import.meta.env.NOTION_SECRET,
-});
-
-const gruposDeInvestigacion = await client.databases.query({
-	database_id: import.meta.env.NOTION_GRUPOS_DE_INVESTIGACION,
-});
+import GrupoInvestigacion from "./GrupoInvestigacion.svelte";
 ---
 
 <BaseLayout title="Grupos de investigación" description="Los diferentes grupos de investigación del DCC">
@@ -18,15 +8,6 @@ const gruposDeInvestigacion = await client.databases.query({
 		<h2 class="font-title text-xl">Grupos de investigación</h2>
 	</div>
 	<div class="flex-grow bg-stone-200 shadow-inner">
-		<ul class="max-w-6xl px-4 py-4 gap-4 mx-auto">
-			{gruposDeInvestigacion.results.map((grupo) => <GrupoInvestigacion {...grupo} />)}
-		</ul>
+		<GrupoInvestigacion client:idle />
 	</div>
 </BaseLayout>
-
-<style>
-	ul {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-	}
-</style>
