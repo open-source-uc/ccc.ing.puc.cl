@@ -47,7 +47,13 @@
 				<div class="flex flex-grow flex-col">
 					<div class="mb-2 text-lg leading-none font-bold text-stone-900">{name}</div>
 					<div class="flex-grow leading-tight text-stone-700">{description}</div>
-					<a href={invitation_url} class="mt-2 text-blue-500 hover:underline px-1 py-2"> Telegram </a>
+					{#if invitation_url}
+						<a href={invitation_url} class="mt-2 text-blue-500 hover:underline px-1 py-2">Telegram</a>
+					{/if}
+								
+					{#if whatsapp_url}
+						<a href={whatsapp_url} class="mt-2 text-teal-700 hover:underline px-1 py-2">WhatsApp</a>
+					{/if}
 				</div>
 			</li>
 		{/each}
