@@ -6,7 +6,7 @@
 		image: string;
 		description: string;
 		name: string;
-		sort_value: number;
+		sortValue: number;
 		whatsapp_url?: string;
 	}
 
@@ -16,7 +16,7 @@
 		try {
 			const res: Group[] = await pb.collection("groups").getFullList<Group>();
 			if (res) {
-				res.sort((a, b) => a.sort_value - b.sort_value);
+				res.sort((a, b) => a.sortValue - b.sortValue);
 				return res;
 			} else {
 				console.log(res);
@@ -50,7 +50,7 @@
 					{#if invitation_url}
 						<a href={invitation_url} class="mt-2 text-blue-500 hover:underline px-1 py-2">Telegram</a>
 					{/if}
-								
+
 					{#if whatsapp_url}
 						<a href={whatsapp_url} class="mt-2 text-teal-700 hover:underline px-1 py-2">WhatsApp</a>
 					{/if}
@@ -58,6 +58,8 @@
 			</li>
 		{/each}
 	</ul>
+{:catch error}
+	<p style="color: red">{error.message}</p>
 {/await}
 
 <style>
