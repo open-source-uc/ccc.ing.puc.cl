@@ -2,29 +2,16 @@
 	import { pb, type Record } from "~/lib/pb";
 
 	interface Group extends Record {
-		invitation_url?: string;
 		image: string;
 		description: string;
 		name: string;
 		sortValue: number;
-		whatsapp_url?: string;
 	}
 
-	let _finally = false;
-
 	async function getGroups() {
-		try {
-			const res: Group[] = await pb.collection("groups").getFullList<Group>();
-			if (res) {
-				res.sort((a, b) => a.sortValue - b.sortValue);
-				return res;
-			} else {
-				console.log(res);
-				throw new Error(res);
-			}
-		} finally {
-			_finally = true;
-		}
+		const res: Group[] = await pb.collection("groups").getFullList<Group>();
+		res.sort((a, b) => a.sortValue - b.sortValue);
+		return res;
 	}
 
 	let groups_promise = getGroups();
@@ -35,25 +22,37 @@
 {:then groups}
 	<ul class="group-grid grip-tem mx-auto flex max-w-5xl flex-col p-4 sm:grid">
 		{#each groups as group}
-			{@const { invitation_url, image, description, name, whatsapp_url } = group}
 			<li
 				class="relative flex flex-row items-center gap-4 rounded-md bg-white p-4 shadow transition-shadow hover:shadow-lg active:shadow-sm sm:flex-col sm:text-center"
 			>
 				<div
 					class="aspect-square max-h-24 flex-shrink-0 overflow-clip rounded-lg border-2 border-stone-700 sm:max-h-32"
 				>
-					<img src={pb.getFileUrl(group, image, { thumb: "192x192" })} alt={name} />
+					<img src={pb.getFileUrl(group, group.image, { thumb: "192x192" })} alt={group.name} />
 				</div>
-				<div class="flex flex-grow flex-col">
-					<div class="mb-2 text-lg leading-none font-bold text-stone-900">{name}</div>
-					<div class="flex-grow leading-tight text-stone-700">{description}</div>
-					{#if invitation_url}
-						<a href={invitation_url} class="mt-2 text-blue-500 hover:underline px-1 py-2">Telegram</a>
-					{/if}
 
-					{#if whatsapp_url}
-						<a href={whatsapp_url} class="mt-2 text-teal-700 hover:underline px-1 py-2">WhatsApp</a>
-					{/if}
+				<div class="flex flex-grow flex-col">
+					<div class="mb-2 text-lg leading-none font-bold text-stone-900">
+						{group.name}
+					</div>
+
+					<div class="flex-grow leading-tight text-stone-700">
+						{group.description}
+					</div>
+
+					<a
+						href={`https://ccc-invite-verifier.osuc.workers.dev/?source=groups&id=${group.id}&platform=telegram`}
+						class="mt-2 text-blue-500 hover:underline px-1 py-2"
+					>
+						Telegram
+					</a>
+
+					<a
+						href={`https://ccc-invite-verifier.osuc.workers.dev/?source=groups&id=${group.id}&platform=whatsapp`}
+						class="mt-2 text-teal-700 hover:underline px-1 py-2"
+					>
+						WhatsApp
+					</a>
 				</div>
 			</li>
 		{/each}
