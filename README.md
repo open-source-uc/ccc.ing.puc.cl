@@ -39,6 +39,11 @@ pocketbase serve
 
 O conectarte a la instancia de pocketbase de producción.
 
+## Sistema Antibots
+
+Con el propósito de evitar oleadas de bots uniéndose a los grupos de Telegram o WhatsApp, se ha implementado un Worker que usa Cloudflare Turnstile para filtrar comportamiento humano respecto a comportamiento automatizado. Para más contexto, visitar el repositorio de https://github.com/open-source-uc/ccc-invite-verifier.
+
+
 ## ¿Porque AstroJS? 🤔
 
 AstroJS permite usar fácilmente componentes de otras librerías de UI,
