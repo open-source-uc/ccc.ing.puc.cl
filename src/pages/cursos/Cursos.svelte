@@ -1,29 +1,17 @@
 <script lang="ts">
 	import { pb, type Record } from "~/lib/pb";
+	import { getInviteUrl } from "~/lib/invites";
 
 	interface Course extends Record {
 		code: string;
 		abbr?: string;
 		name: string;
-		links: { [name: string]: string };
 	}
 
-	let _finally = false;
-
 	async function getCourses() {
-		_finally = false;
-		try {
-			const res: Course[] = await pb.collection("courses").getFullList<Course>();
-			if (res) {
-				res.sort((a, b) => a.code.localeCompare(b.code));
-				return res;
-			} else {
-				console.log(res);
-				throw new Error(res);
-			}
-		} finally {
-			_finally = true;
-		}
+		const res: Course[] = await pb.collection("courses").getFullList<Course>();
+		res.sort((a, b) => a.code.localeCompare(b.code));
+		return res;
 	}
 
 	let courses_promise = getCourses();
@@ -34,17 +22,20 @@
 {:then courses}
 	<ul class="course-grid mx-auto grid max-w-4xl p-4">
 		{#each courses as course}
-			{@const { abbr, code, name, invitation_url } = course}
 			<li class="flex flex-col rounded bg-white py-3 px-2">
 				<div class="flex-grow">
-					{#if abbr}
-						{abbr} - {" "}
+					{#if course.abbr}
+						{course.abbr} - {" "}
 					{/if}
-					{name} ({code})
+					{course.name} ({course.code})
 				</div>
-				{#if invitation_url}
-					<a href={invitation_url} class="text-blue-500 hover:underline p-1"> Telegram </a>
-				{/if}
+
+				<a
+					href={getInviteUrl("courses", course.id, "telegram")}
+					class="text-blue-500 hover:underline p-1"
+				>
+					Telegram
+				</a>
 			</li>
 		{/each}
 	</ul>
