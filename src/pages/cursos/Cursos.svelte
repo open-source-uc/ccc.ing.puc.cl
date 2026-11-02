@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { pb, type Record } from "~/lib/pb";
+	import { getInviteUrl } from "~/lib/invites";
 
 	interface Course extends Record {
 		code: string;
@@ -30,7 +31,7 @@
 				</div>
 
 				<a
-					href={`https://ccc-invite-verifier.osuc.workers.dev/?source=courses&id=${course.id}&platform=telegram`}
+					href={getInviteUrl("courses", course.id, "telegram")}
 					class="text-blue-500 hover:underline p-1"
 				>
 					Telegram

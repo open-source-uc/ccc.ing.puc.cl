@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { pb, type Record } from "~/lib/pb";
+	import { getInviteUrl } from "~/lib/invites";
 
 	interface Group extends Record {
 		image: string;
@@ -41,14 +42,14 @@
 					</div>
 
 					<a
-						href={`https://ccc-invite-verifier.osuc.workers.dev/?source=groups&id=${group.id}&platform=telegram`}
+						href={getInviteUrl("groups", group.id, "telegram")}
 						class="mt-2 text-blue-500 hover:underline px-1 py-2"
 					>
 						Telegram
 					</a>
 
 					<a
-						href={`https://ccc-invite-verifier.osuc.workers.dev/?source=groups&id=${group.id}&platform=whatsapp`}
+						href={getInviteUrl("groups", group.id, "whatsapp")}
 						class="mt-2 text-teal-700 hover:underline px-1 py-2"
 					>
 						WhatsApp
